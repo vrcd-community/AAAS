@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: aaas 0.0.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "一个更加完整，有多种解决方法，功能多样的集会系统。"
+msgstr "より完全で、複数の解決方法と多様な機能を備えた集会システム。"
+
+msgid "本组件包含以下组件：\n"
+"Pro TV —— Architech VR\n"
+"Sliden —— ちくわ物産\n"
+"Real-time Clocks —— Vowgan\n"
+"UdonUI —— Asitir"
+msgstr "このコンポーネントには以下のコンポーネントが含まれます：\n"
+"Pro TV —— Architech VR\n"
+"Sliden —— ちくわ物産\n"
+"Real-time Clocks —— Vowgan\n"
+"UdonUI —— Asitir"
+
+msgid "因为情况特殊，我们将根据再配布原则对本组件使用混合许可条例：ISC + 内容友好许可（自定义条款）"
+msgstr "状況が特殊なため、再配布の原則に基づき、このコンポーネントに混合ライセンス条項を適用します：ISC + コンテンツフレンドリーなライセンス（カスタム条項）"
+
+msgid "组件作者"
+msgstr "コンポーネントの作者"
+
+msgid "从左侧抓起面板"
+msgstr "左側からパネルを手に取る"
+
+msgid "<size=30>您可以利用面板</size>\n"
+"\n"
+"·调整世界设置\n"
+"·观看屏幕\n"
+"·重置和调整画面同步\n"
+"\n"
+"您可以通过召唤面板按钮随时传送面板至指定位置。\n"
+"\n"
+"<color=#ffffff80>功能测试中</color>"
+msgstr "<size=30>パネルを使用して</size>\n"
+"\n"
+"·ワールドの設定を調整\n"
+"·スクリーンを見る\n"
+"·画面の同期をリセットおよび調整\n"
+"\n"
+"パネル召喚ボタンを使用して、いつでもパネルを指定の位置にテレポートさせることができます。\n"
+"\n"
+"<color=#ffffff80>機能テスト中</color>"
+
+msgid "PPT播放器"
+msgstr "PPTプレーヤー"
+
+msgid "视频播放器"
+msgstr "ビデオプレーヤー"
+
+msgid "列表"
+msgstr "リスト"
+
+msgid "跳过"
+msgstr "スキップ"
+
+msgid "召唤面板"
+msgstr "パネルを召喚する"

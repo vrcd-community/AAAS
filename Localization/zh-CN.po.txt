@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: aaas 0.0.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "一个更加完整，有多种解决方法，功能多样的集会系统。"
+msgstr "一个更加完整，有多种解决方法，功能多样的集会系统。"
+
+msgid "本组件包含以下组件：\n"
+"Pro TV —— Architech VR\n"
+"Sliden —— ちくわ物産\n"
+"Real-time Clocks —— Vowgan\n"
+"UdonUI —— Asitir"
+msgstr "本组件包含以下组件：\n"
+"Pro TV —— Architech VR\n"
+"Sliden —— ちくわ物産\n"
+"Real-time Clocks —— Vowgan\n"
+"UdonUI —— Asitir"
+
+msgid "因为情况特殊，我们将根据再配布原则对本组件使用混合许可条例：ISC + 内容友好许可（自定义条款）"
+msgstr "因为情况特殊，我们将根据再配布原则对本组件使用混合许可条例：ISC + 内容友好许可（自定义条款）"
+
+msgid "组件作者"
+msgstr "组件作者"
+
+msgid "从左侧抓起面板"
+msgstr "从左侧抓起面板"
+
+msgid "<size=30>您可以利用面板</size>\n"
+"\n"
+"·调整世界设置\n"
+"·观看屏幕\n"
+"·重置和调整画面同步\n"
+"\n"
+"您可以通过召唤面板按钮随时传送面板至指定位置。\n"
+"\n"
+"<color=#ffffff80>功能测试中</color>"
+msgstr "<size=30>您可以利用面板</size>\n"
+"\n"
+"·调整世界设置\n"
+"·观看屏幕\n"
+"·重置和调整画面同步\n"
+"\n"
+"您可以通过召唤面板按钮随时传送面板至指定位置。\n"
+"\n"
+"<color=#ffffff80>功能测试中</color>"
+
+msgid "PPT播放器"
+msgstr "PPT播放器"
+
+msgid "视频播放器"
+msgstr "视频播放器"
+
+msgid "列表"
+msgstr "列表"
+
+msgid "跳过"
+msgstr "跳过"
+
+msgid "召唤面板"
+msgstr "召唤面板"
