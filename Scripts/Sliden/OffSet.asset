@@ -20,7 +20,7 @@ MonoBehaviour:
   compiledVersion: 2
   behaviourSyncMode: 0
   hasInteractEvent: 0
-  scriptID: -1895794075595108299
+  scriptID: -6523818160985140499
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -103,13 +103,13 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: _textMeshPro
+      Data: _offsetText
     - Name: $v
       Entry: 7
       Data: 5|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: <Name>k__BackingField
       Entry: 1
-      Data: _textMeshPro
+      Data: _offsetText
     - Name: <UserType>k__BackingField
       Entry: 7
       Data: 6|System.RuntimeType, mscorlib
@@ -175,7 +175,7 @@ MonoBehaviour:
       Data: 10|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: Chikuwa.Sliden.Sliden, Assembly-CSharp
+      Data: cdes_presets.Sliden, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 

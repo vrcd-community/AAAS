@@ -1,17 +1,14 @@
-﻿using Chikuwa.Sliden;
-using TMPro;
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
-using VRC.SDKBase;
-using VRC.Udon;
-namespace WangQAQ.Plug
+
+namespace cdes_presets
 {
     public class OffSet : UdonSharpBehaviour
     {
         private int offSet = 0;
 
-        [SerializeField] private Text _textMeshPro;
+        [SerializeField] private Text _offsetText;
 
         private Sliden _sliden;
 
@@ -36,7 +33,7 @@ namespace WangQAQ.Plug
         {
             _sliden._offCount = offSet;
             _sliden._offCountUpdate = true;
-            _textMeshPro.text = offSet.ToString();
+            _offsetText.text = offSet.ToString();
         }
 
     }

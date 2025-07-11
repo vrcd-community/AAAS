@@ -1,11 +1,9 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
-using UnityEngine.UI;
 using VRC.SDKBase;
-using VRC.Udon;
 
-namespace cdse_presets
+namespace cdes_presets
 {
 	public class PlayerListSet : UdonSharpBehaviour
 	{
