@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: "\u5DE6\u624BUsed 1"
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 5b7a44b64bb39dd4c9f03d4245cbf051, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: ad405cd8ac2611140bccd8f8b266f822, type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export stickObject\r\n    .export headObject\r\n   
     .sync Y, none\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n    __Boolean_1:
     %SystemBoolean, null\r\n    __Boolean_2: %SystemBoolean, null\r\n    __Single_0:
@@ -377,11 +377,14 @@ MonoBehaviour:
       position: {x: -313.59998, y: 480.0454}
       nodeUIDs:
       - 
+      - 
       flowUIDs:
       - 1516e992-fb29-4388-b5d5-fea2642efa32
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|NetWorking
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: UnityEngineTransform.__set_localScale__UnityEngineVector3__SystemVoid
       uid: 7a2a5276-0d63-4bfe-a99c-df2ee8c11065
       position: {x: 86.8, y: 480}
@@ -466,11 +469,14 @@ MonoBehaviour:
       position: {x: 198.4, y: -180.8}
       nodeUIDs:
       - 
+      - 
       flowUIDs:
       - 57bbbe24-0c73-423b-a4f6-01c0eddf9255
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Restart
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedFrames__SystemString_SystemInt32_VRCUdonCommonEnumsEventTiming__SystemVoid
       uid: f954d201-cf8d-4083-9248-0ee5d4f300b2
       position: {x: 1195.2001, y: -180.80003}
