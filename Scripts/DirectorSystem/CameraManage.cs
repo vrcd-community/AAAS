@@ -88,6 +88,7 @@ namespace cdes_presets
         public override void OnDeserialization()
         {
             SetCameraPos(CameraPosSync);
+            Debug.Log("camera pose sync" + CameraPosSync);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace cdes_presets
 
         public void OnButtonChange(int buttonOrder)
         {
-            CameraManageOBJ.SetCameraPos(buttonOrder);
+            CameraManageOBJ.SendCameraPos(buttonOrder);
         }
 
         //如果你有布置超过9个点位的需求，在这里添加事件到相应数量即可

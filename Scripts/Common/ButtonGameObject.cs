@@ -16,8 +16,6 @@ namespace cdes_presets
         public GameObject[] TargetGameObjectOn;
         [Header("目标关闭对象")]
         public GameObject[] TargetGameObjectOff;
-        [Header("按钮")]
-        public Button buttonGameObject;
 
         public void isTrigger()
         {

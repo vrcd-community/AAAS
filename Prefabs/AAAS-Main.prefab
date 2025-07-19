@@ -10665,16 +10665,16 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 3073846355828070595}
   isGlobal: 1
   targetMesh:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 725131154898358055}
   - {fileID: 1893974967121747958}
   - {fileID: 3460833540850688891}
   - {fileID: 3554809075106203301}
   - {fileID: 6672984108762063243}
   - {fileID: 2590668665641469485}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetGameObject:
   - {fileID: 10253053460272653}
   - {fileID: 5988182268736746506}
@@ -16227,7 +16227,7 @@ Transform:
   m_GameObject: {fileID: 3931758036503625255}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.2, z: -5}
+  m_LocalPosition: {x: 2, y: 1.2, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31055,7 +31055,7 @@ Transform:
   m_GameObject: {fileID: 7588505000738272259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.5, z: -5}
+  m_LocalPosition: {x: 2, y: 1.5, z: -5}
   m_LocalScale: {x: 0.008, y: 0.34, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
