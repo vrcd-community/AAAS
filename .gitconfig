@@ -1,0 +1,6 @@
+﻿[filter "usharp-prefab"]
+  smudge = node .gitscripts/filter-usharp-prefab.js
+  clean = node .gitscripts/filter-usharp-prefab.js
+
+[diff "usharp-prefab"]
+  textconv = node .gitscripts/filter-usharp-prefab.js
