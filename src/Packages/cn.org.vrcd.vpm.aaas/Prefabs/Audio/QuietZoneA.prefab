@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7100261259223370599}
   - component: {fileID: 652532494998444296}
   m_Layer: 2
-  m_Name: QuietZone-a
+  m_Name: QuietZoneA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
