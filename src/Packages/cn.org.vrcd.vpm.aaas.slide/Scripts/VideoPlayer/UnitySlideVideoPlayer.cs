@@ -24,14 +24,8 @@ namespace AAAS.Slide.VideoPlayer {
         private string _videoErrorEventName = "OnSlideVideoError";
         private string _videoReadyEventName = "OnSlideVideoReady";
 
-        public VRCUrl testUrl;
-
         public override VRCUrl GetVideoUrl() {
             return _videoUrl;
-        }
-
-        public void TestVideoLoad() {
-            LoadVideo(testUrl);
         }
 
         public override void LoadVideo(VRCUrl url) {
