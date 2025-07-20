@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AtlasCDSE
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 4
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 1
+      readable: 1
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: b1a8093f5995e834c97fca719dcb6609, type: 3}
+    - {fileID: 2800000, guid: de03f013b4bd6df41a09a6b61d9b5796, type: 3}
+    - {fileID: 2800000, guid: 5149ba4b92a591b4fb8948af9117ec09, type: 3}
+    - {fileID: 2800000, guid: 1f3f73959a5155243ac6bb971e36b677, type: 3}
+    - {fileID: 2800000, guid: c8f2b8a01c6c9c6448bd6089e61be08b, type: 3}
+    - {fileID: 2800000, guid: 3b0e5993966f51148885f1f2522f22d6, type: 3}
+    - {fileID: 2800000, guid: 8f54a4509c158b545a278a83ba6a5242, type: 3}
+    - {fileID: 2800000, guid: 8f2b88c2c12325d44804abe64fccda6f, type: 3}
+    - {fileID: 2800000, guid: 8f567d80275224b4799ac6cf0a1f274f, type: 3}
+    - {fileID: 2800000, guid: 9bbddfb6cdc3af74394b04896bfa626f, type: 3}
+    - {fileID: 2800000, guid: b3feae686668c0d4a84cb94a410b82a4, type: 3}
+    - {fileID: 2800000, guid: 6a7d3112fc3186147aa1efd10d635e17, type: 3}
+    - {fileID: 2800000, guid: dcc041711e79ad24fb15d453d2b6419e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 8f54a4509c158b545a278a83ba6a5242: 21300000
+    - 8f567d80275224b4799ac6cf0a1f274f: 21300000
+    - c8f2b8a01c6c9c6448bd6089e61be08b: 21300000
+    - dcc041711e79ad24fb15d453d2b6419e: 21300000
+    - 6a7d3112fc3186147aa1efd10d635e17: 21300000
+    - 8f2b88c2c12325d44804abe64fccda6f: 21300000
+    - de03f013b4bd6df41a09a6b61d9b5796: 21300000
+    - 3b0e5993966f51148885f1f2522f22d6: 21300000
+    - 1f3f73959a5155243ac6bb971e36b677: 21300000
+    - 9bbddfb6cdc3af74394b04896bfa626f: 21300000
+    - b3feae686668c0d4a84cb94a410b82a4: 21300000
+    - 5149ba4b92a591b4fb8948af9117ec09: 21300000
+    - b1a8093f5995e834c97fca719dcb6609: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8f54a4509c158b545a278a83ba6a5242, type: 3}
+  - {fileID: 21300000, guid: 8f567d80275224b4799ac6cf0a1f274f, type: 3}
+  - {fileID: 21300000, guid: c8f2b8a01c6c9c6448bd6089e61be08b, type: 3}
+  - {fileID: 21300000, guid: dcc041711e79ad24fb15d453d2b6419e, type: 3}
+  - {fileID: 21300000, guid: 6a7d3112fc3186147aa1efd10d635e17, type: 3}
+  - {fileID: 21300000, guid: 8f2b88c2c12325d44804abe64fccda6f, type: 3}
+  - {fileID: 21300000, guid: de03f013b4bd6df41a09a6b61d9b5796, type: 3}
+  - {fileID: 21300000, guid: 3b0e5993966f51148885f1f2522f22d6, type: 3}
+  - {fileID: 21300000, guid: 1f3f73959a5155243ac6bb971e36b677, type: 3}
+  - {fileID: 21300000, guid: 9bbddfb6cdc3af74394b04896bfa626f, type: 3}
+  - {fileID: 21300000, guid: b3feae686668c0d4a84cb94a410b82a4, type: 3}
+  - {fileID: 21300000, guid: 5149ba4b92a591b4fb8948af9117ec09, type: 3}
+  - {fileID: 21300000, guid: b1a8093f5995e834c97fca719dcb6609, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - lock-open
+  - pause
+  - camera
+  - pen
+  - "\u4F11\u61A9\u533A"
+  - mic
+  - aperture
+  - location
+  - boxes
+  - play
+  - track
+  - banknote
+  - ADDP
+  m_RenderDataMap: {}
+  m_Tag: atlas_CDSE
+  m_IsVariant: 0
