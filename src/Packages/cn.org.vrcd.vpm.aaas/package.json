@@ -10,6 +10,8 @@
     "com.vrchat.base": "3.8.1",
     "com.vrchat.worlds": "3.8.1",
     "dev.architech.protv": "3.0.0-beta.28",
+    "dev.architech.sdk": "0.21.2",
+    "tlp.udonutils": "11.3.1",
     "tlp.udonvoiceutils": "3.0.2"
   },
   "author": {
