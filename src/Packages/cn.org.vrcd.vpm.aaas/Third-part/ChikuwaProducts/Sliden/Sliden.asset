@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: Sliden
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 0277380d95bfd5c4fba0abde35d92fe6, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 9208778bf08709644aab49585f9dc95e, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: -6545066608239620848
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -61,7 +59,7 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.OffSet, AAAS.TempAssembly
+      Data: cdes_presets.OffSet, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -799,7 +797,7 @@ MonoBehaviour:
       Data: 42|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.SlidenState, AAAS.TempAssembly
+      Data: cdes_presets.SlidenState, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -853,7 +851,7 @@ MonoBehaviour:
       Data: 45|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.SlidenError, AAAS.TempAssembly
+      Data: cdes_presets.SlidenError, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -1393,7 +1391,7 @@ MonoBehaviour:
       Data: 75|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.SlidenListener[], AAAS.TempAssembly
+      Data: cdes_presets.SlidenListener[], ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
