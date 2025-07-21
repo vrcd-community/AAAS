@@ -161,7 +161,7 @@ MonoBehaviour:
       Data: 8|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.Sliden, AAAS.TempAssembly
+      Data: cdes_presets.Sliden, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -527,7 +527,7 @@ MonoBehaviour:
       Data: 27|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.TabletPlaceholder[], AAAS.TempAssembly
+      Data: cdes_presets.TabletPlaceholder[], ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 

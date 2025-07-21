@@ -59,7 +59,7 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.OffSet, AAAS.TempAssembly
+      Data: cdes_presets.OffSet, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -797,7 +797,7 @@ MonoBehaviour:
       Data: 42|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.SlidenState, AAAS.TempAssembly
+      Data: cdes_presets.SlidenState, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -851,7 +851,7 @@ MonoBehaviour:
       Data: 45|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.SlidenError, AAAS.TempAssembly
+      Data: cdes_presets.SlidenError, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -1391,7 +1391,7 @@ MonoBehaviour:
       Data: 75|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.SlidenListener[], AAAS.TempAssembly
+      Data: cdes_presets.SlidenListener[], ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
