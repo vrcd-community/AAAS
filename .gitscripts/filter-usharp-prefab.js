@@ -1,18 +1,20 @@
-// https://github.com/esnya/InariUdon/blob/c2ea10c07383b95c381a31021deec9376a763d83/.gitscripts/filter-usharp-prefab.js
+// modified from: https://github.com/esnya/UdonRadioCommunications/blob/a43cc10fdb3e3577bbed9c7feb7df79aea3e2362/.gitscripts/filter-usharp-prefab.js
 
 const fs = require("fs");
 
-const guidPattern = '\\{fileID: .*(\n     *type: [0-9]+)?\\}';
+const guidPattern = '\\{fileID: .*(\r?\n     *type: [0-9]+)?\\}';
 const pattern = new RegExp(
   [
-    `    - target: ${guidPattern}\n`,
-    "      propertyPath: (serializedProgramAsset|serializationData\\..*)\n",
-    "      value:.*\n",
-    `      objectReference: ${guidPattern}\n`,
+    `    - target: ${guidPattern}\r?\n`,
+    "      propertyPath: (serializedProgramAsset|serializationData\\..*)\r?\n",
+    "      value:.*\r?\n",
+    `      objectReference: ${guidPattern}\r?\n`,
     "|",
-    `  serialized(Udon)?ProgramAsset: ${guidPattern}\n`,
+    `  serialized(Udon)?ProgramAsset: ${guidPattern}\r?\n`,
     "|",
-    "    SerializedFormat: [02]\n",
+    `  serializedProgramBytesString: .*\r?\n?`,
+    "|",
+    "    SerializedFormat: [02]\r?\n",
   ].join(""),
   "mg"
 );
