@@ -15,6 +15,8 @@ namespace AAAS.Slide.Core {
 
         [UdonSynced] [CanBeNull] [FieldChangeCallback(nameof(SlideUrl))]
         private VRCUrl _slideUrl;
+
+        [PublicAPI]
         public VRCUrl SlideUrl {
             get => _slideUrl;
             private set {
@@ -25,6 +27,8 @@ namespace AAAS.Slide.Core {
 
         [UdonSynced] [FieldChangeCallback(nameof(SlidePageIndex))]
         private int _slidePageIndex;
+
+        [PublicAPI]
         public int SlidePageIndex {
             get => _slidePageIndex;
             private set {
@@ -37,6 +41,7 @@ namespace AAAS.Slide.Core {
         /// <summary>
         /// Total Page Count
         /// </summary>
+        [PublicAPI]
         public uint PageTotal { get; private set; }
         /// <summary>
         /// Seconds Per Page
@@ -56,6 +61,7 @@ namespace AAAS.Slide.Core {
             videoPlayer.SetVideoReadyEventReceiver(this, nameof(_OnSlideVideoReady));
         }
 
+        [PublicAPI]
         public void _LoadSlide(VRCUrl url, int pageIndex = 0) {
             TakeOwnership();
 
@@ -65,6 +71,7 @@ namespace AAAS.Slide.Core {
             RequestSerialization();
         }
 
+        [PublicAPI]
         public void _NextPage() {
             if (!videoPlayer.GetIsReady()) return;
             if (SlidePageIndex >= PageTotal) return;
@@ -74,6 +81,7 @@ namespace AAAS.Slide.Core {
             RequestSerialization();
         }
 
+        [PublicAPI]
         public void _PreviousPage() {
             if (!videoPlayer.GetIsReady()) return;
             if (SlidePageIndex <= 0) return;
