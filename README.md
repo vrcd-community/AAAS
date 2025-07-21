@@ -99,23 +99,37 @@ AAAS 的音频组件合集。
 
 ## 开发
 
-### 为 Unity 和 U# 配置 Git（适用于 Windows）
+### 1. 为 U# 配置 Git（适用于 Windows）
 
-#### 选项 1：使用 Python 运行时
+U# 编译器会对 scene 、 prefab 和 scene 文件进行大量 GUID 变更用于创建编译成果的关联。这会导致版本控制中的变更追踪变得异常艰难。因此，我们要求在提交代码修改时不包括这些易变的变更。使用以下 Git 配置指令，配合任意运行时，允许 Git 版本控制自动忽略这些变更，以防止意外的变更提交。
+
+#### 选项 1)：使用 Python 运行时
 
 ```sh
 git config filter.usharp-prefab.clean "python .gitscripts/filter_usharp.py"
-git config merge.unityyamlmerge.name "Unity Smart Merge"
-git config merge.unityyamlmerge.driver '"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/UnityYAMLMerge.exe" merge -p %O %A %B %A'
 ```
 
-#### 选项 2：使用 Node.js 运行时
+#### 选项 2)：使用 Node.js 运行时
 
 ```sh
 git config filter.usharp-prefab.clean "node .gitscripts/filter-usharp-prefab.js"
-git config merge.unityyamlmerge.name "Unity Smart Merge"
-git config merge.unityyamlmerge.driver '"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/UnityYAMLMerge.exe" merge -p %O %A %B %A'
 ```
+
+### 2. 为 Unity 配置 Git （可选）
+
+你可以选择使用 Unity 的 YAML 合并工具来处理任何潜在的 Git 合并冲突（参见：[Unity 文档](https://docs.unity3d.com/2022.3/Documentation/Manual/SmartMerge.html)）。其允许 Git:
+
+>以语义正确的方式合并 scene 、 prefab 和 scene 文件
+
+<span style="color:red"> **⚠注意：该工具仅保证 YAML 语义上的正确性，你仍需确保合并成果内容的正确性。**</span>
+
+如果你理解并需要这项功能，如下 Git 配置指令可以被用于进行该功能的配置：
+
+```sh
+git config merge.unityyamlmerge.driver '"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/UnityYAMLMerge.exe" merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"'
+```
+
+其中，根据 Unity 安装方式的不同，指令中的 `C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/UnityYAMLMerge.exe` 可能需要被对应的修改。
 
 ## 再配布相关
 
