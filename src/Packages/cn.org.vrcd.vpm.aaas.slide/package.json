@@ -5,7 +5,6 @@
   "hideInEditor": false,
   "description": "更加健壮、灵活的幻灯片系统",
   "unity": "2022.3",
-  "unityRelease": "22f1",
   "dependencies": {
     "com.vrchat.base": "3.8.1",
     "com.vrchat.worlds": "3.8.1"
