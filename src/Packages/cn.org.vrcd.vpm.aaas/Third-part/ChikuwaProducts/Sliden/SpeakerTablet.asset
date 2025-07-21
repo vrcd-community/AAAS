@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SpeakerTablet
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: ea787bb56f92a6f4dabfc039a512e020, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 4161b6e47c3a16a4ab60d2981617f42a, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: -2714220347527780902
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -163,7 +161,7 @@ MonoBehaviour:
       Data: 8|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.Sliden, AAAS.TempAssembly
+      Data: cdes_presets.Sliden, ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
@@ -529,7 +527,7 @@ MonoBehaviour:
       Data: 27|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: cdes_presets.TabletPlaceholder[], AAAS.TempAssembly
+      Data: cdes_presets.TabletPlaceholder[], ChikuwaProducts.Sliden
     - Name: 
       Entry: 8
       Data: 
