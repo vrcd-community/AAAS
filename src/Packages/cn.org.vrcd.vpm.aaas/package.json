@@ -5,6 +5,14 @@
   "hideInEditor": false,
   "description": "一种更加完备的集会系统",
   "unity": "2022.3",
+  "unityRelease": "22f1",
+  "dependencies": {
+    "com.sonic853.udon.translate-manager": "1.1.1",
+    "com.vrchat.base": "3.8.1",
+    "com.vrchat.worlds": "3.8.1",
+    "dev.architech.protv": "3.0.0-beta.28",
+    "tlp.udonvoiceutils": "3.0.2"
+  },
   "author": {
     "email": "us@vrcd.org.cn",
     "name": "VRCD",
