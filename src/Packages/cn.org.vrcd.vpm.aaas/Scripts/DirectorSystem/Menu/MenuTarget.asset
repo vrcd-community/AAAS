@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: MenuTarget
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: a6e0645828652894485a393b9040c41a, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 838a1e2568cfeec48bdc2fcc35d996eb, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: -4245124779205844900
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: PlayerFootSteps
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d077dd65b9378d243b9c0c574b38f66a, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 06a83b08665597945a059523254a8c1f, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: 4395685053322007396
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 

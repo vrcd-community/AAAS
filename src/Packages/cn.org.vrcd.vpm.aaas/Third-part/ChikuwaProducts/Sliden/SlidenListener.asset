@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SlidenListener
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: c2bd40c5f61929e40959e70be88c5b51, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 798c540a0c8041c48aa452b0e5845dca, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: -5355378573677416146
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 

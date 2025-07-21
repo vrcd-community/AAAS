@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: UnitySlideVideoPlayer
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 091215566fd1b4a488ea941ce9fc71d2, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 11162e72c33574845aefcddc23ce971c, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: 4510868956306117971
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 

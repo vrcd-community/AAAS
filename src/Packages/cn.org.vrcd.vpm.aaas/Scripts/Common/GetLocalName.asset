@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: GetLocalName
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 36d83f694df2c614ca5c42b2076246a0, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 5f69a2431af1ff34ca6dd8f313c2e277, type: 3}
@@ -22,7 +21,6 @@ MonoBehaviour:
   hasInteractEvent: 0
   scriptID: -3738673272725414396
   serializationData:
-    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
