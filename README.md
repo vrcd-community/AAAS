@@ -97,7 +97,25 @@ AAAS 的音频组件合集。
 
 ---
 
+## 开发
 
+### 为 Unity 和 U# 配置 Git（适用于 Windows）
+
+#### 选项 1：使用 Python 运行时
+
+```sh
+git config filter.usharp-prefab.clean "python .gitscripts/filter_usharp.py"
+git config merge.unityyamlmerge.name "Unity Smart Merge"
+git config merge.unityyamlmerge.driver '"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/UnityYAMLMerge.exe" merge -p %O %A %B %A'
+```
+
+#### 选项 2：使用 Node.js 运行时
+
+```sh
+git config filter.usharp-prefab.clean "node .gitscripts/filter-usharp-prefab.js"
+git config merge.unityyamlmerge.name "Unity Smart Merge"
+git config merge.unityyamlmerge.driver '"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/UnityYAMLMerge.exe" merge -p %O %A %B %A'
+```
 
 ## 再配布相关
 
