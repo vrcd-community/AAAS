@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: "\u5DE6\u624BUsed 1"
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: ad405cd8ac2611140bccd8f8b266f822, type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export stickObject\r\n    .export headObject\r\n   
     .sync Y, none\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n    __Boolean_1:
     %SystemBoolean, null\r\n    __Boolean_2: %SystemBoolean, null\r\n    __Single_0:
