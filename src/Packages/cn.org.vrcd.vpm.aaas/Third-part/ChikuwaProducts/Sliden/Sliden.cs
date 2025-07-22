@@ -333,7 +333,7 @@ namespace cdes_presets
             }
 
             //如果 _videoPlayer 返回 true，_videoPlayer 准备好了（转自播放器本身），_url 存在一致性
-            if (_videoPlayer && _videoPlayer.IsReady && _url == _nextUrl)
+            if (_videoPlayer && _videoPlayer.IsReady && _url == _nextUrl && _step > 0)
             {
                 //根据视频的当前播放时间来计算出它应该显示的是第几页（page）
                 //四舍五入
