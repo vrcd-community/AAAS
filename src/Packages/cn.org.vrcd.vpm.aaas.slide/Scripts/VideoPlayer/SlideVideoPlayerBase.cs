@@ -1,5 +1,6 @@
 ﻿using JetBrains.Annotations;
 using UdonSharp;
+using UnityEngine;
 using VRC.SDKBase;
 
 namespace AAAS.Slide.VideoPlayer {
@@ -61,6 +62,15 @@ namespace AAAS.Slide.VideoPlayer {
         /// </summary>
         [PublicAPI]
         public virtual void Unload() { }
+
+        /// <summary>
+        /// Get texture of the video screen
+        /// </summary>
+        /// <returns></returns>
+        [PublicAPI]
+        public virtual Texture GetVideoPlayerTexture() {
+            return null;
+        }
 
         /// <summary>
         /// Called when a video error occurs, such as unsupported format or network issues. Will send a custom **network** event target to self with the <see cref="VRC.SDK3.Components.Video.VideoError"/> in the uint

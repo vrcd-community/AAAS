@@ -62,6 +62,11 @@ namespace AAAS.Slide.Core {
         }
 
         [PublicAPI]
+        public Texture _GetSlidePlayerTexture() {
+            return videoPlayer.GetVideoPlayerTexture();
+        }
+
+        [PublicAPI]
         public void _LoadSlide(VRCUrl url, int pageIndex = 0) {
             TakeOwnership();
 
