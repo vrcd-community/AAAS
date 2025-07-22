@@ -9,6 +9,7 @@ using VRC.Udon.Common.Interfaces;
 namespace AAAS.Slide.VideoPlayer {
     public class UnitySlideVideoPlayer : SlideVideoPlayerBase {
         [SerializeField] private VRCUnityVideoPlayer videoPlayer;
+        [SerializeField] private Texture videoPlayerTexture;
 
         public override double GetDuration() => videoPlayer.IsReady ? videoPlayer.GetDuration() : -1;
         public override double GetPosition() => videoPlayer.IsReady ? videoPlayer.GetTime() : -1;
@@ -23,6 +24,18 @@ namespace AAAS.Slide.VideoPlayer {
 
         private string _videoErrorEventName = "OnSlideVideoError";
         private string _videoReadyEventName = "OnSlideVideoReady";
+
+        private void Start() {
+            if (!videoPlayerTexture) {
+                enabled = false;
+                Debug.LogError("[UnitySlideVideoPlayer] Video player texture is not assigned. Please assign a texture in the inspector.");
+            }
+
+            if (!videoPlayer) {
+                enabled = false;
+                Debug.LogError("[UnitySlideVideoPlayer] Video player is not assigned. Please assign a video player in the inspector.");
+            }
+        }
 
         public override VRCUrl GetVideoUrl() {
             return _videoUrl;
@@ -48,6 +61,10 @@ namespace AAAS.Slide.VideoPlayer {
 
         public override bool GetIsReady() {
             return videoPlayer.IsReady;
+        }
+
+        public override Texture GetVideoPlayerTexture() {
+            return videoPlayerTexture;
         }
 
         public override void SetVideoErrorEventReceiver(UdonSharpBehaviour receiver,
