@@ -155,6 +155,9 @@ namespace AAAS.Slide.Core {
     #region Networking
 
         private void TakeOwnership() {
+            if (Networking.IsOwner(gameObject))
+                return;
+
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
 
