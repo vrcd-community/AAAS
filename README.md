@@ -115,13 +115,21 @@ git config filter.usharp-prefab.clean "python .gitscripts/filter_usharp.py"
 git config filter.usharp-prefab.clean "node .gitscripts/filter-usharp-prefab.js"
 ```
 
+#### 重新规范化仓库
+
+**<span style="color:red">⚠注意：每当清理过滤器更改时，存储库应该重新规范化。参考：[Git - attributes 文档](https://git-scm.com/docs/gitattributes#:~:text=Note:%20Whenever%20the%20clean%20filter%20is%20changed,%20the%20repo%20should%20be%20renormalized)</span>**
+
+```sh
+git add --renormalize .
+```
+
 ### 2. 为 Unity 配置 Git （可选）
 
 你可以选择使用 Unity 的 YAML 合并工具来处理任何潜在的 Git 合并冲突（参见：[Unity 文档](https://docs.unity3d.com/2022.3/Documentation/Manual/SmartMerge.html)）。其允许 Git:
 
 >以语义正确的方式合并 scene 、 prefab 和 scene 文件
 
-<span style="color:red"> **⚠注意：该工具仅保证 YAML 语义上的正确性，你仍需确保合并成果内容的正确性。**</span>
+**<span style="color:red">⚠注意：该工具仅保证 YAML 语义上的正确性，你仍需确保合并成果内容的正确性。</span>**
 
 如果你理解并需要这项功能，如下 Git 配置指令可以被用于进行该功能的配置：
 
