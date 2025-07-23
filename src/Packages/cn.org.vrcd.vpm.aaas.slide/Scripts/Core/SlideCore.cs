@@ -109,8 +109,8 @@ namespace AAAS.Slide.Core {
             if (!listener || string.IsNullOrWhiteSpace(eventName))
                 return false;
 
-            ArrayTools.Add(_slideStatueChangedEventListeners, listener);
-            ArrayTools.Add(_slideStatueChangedEventNames, eventName);
+            _slideStatueChangedEventListeners = ArrayTools.Add(_slideStatueChangedEventListeners, listener);
+            _slideStatueChangedEventNames = ArrayTools.Add(_slideStatueChangedEventNames, eventName);
 
             return true;
         }

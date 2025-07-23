@@ -57,8 +57,8 @@ namespace AAAS.Slide.Core {
                 return false;
             }
 
-            ArrayTools.Add(_outputChangedEventListeners, listener);
-            ArrayTools.Add(_outputChangedEventNames, eventName);
+            _outputChangedEventListeners = ArrayTools.Add(_outputChangedEventListeners, listener);
+            _outputChangedEventNames = ArrayTools.Add(_outputChangedEventNames, eventName);
 
             return true;
         }
