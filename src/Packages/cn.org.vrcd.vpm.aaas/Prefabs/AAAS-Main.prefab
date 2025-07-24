@@ -1016,7 +1016,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 7141436076488075811}
-  _offsetText: {fileID: 0}
+  _offsetText: {fileID: 7515000761191147192}
 --- !u!114 &7141436076488075811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25680,7 +25680,7 @@ GameObject:
   - component: {fileID: 2439674923709445857}
   - component: {fileID: 8534011962434972242}
   m_Layer: 13
-  m_Name: ADD
+  m_Name: SUB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25797,7 +25797,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: _AddOffSet
+          m_StringArgument: _SubOffSet
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6336359674902119123
@@ -28276,7 +28276,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: HandIntaractableDistance
       Entry: 4
-      Data: 0.3
+      Data: 0.05
     - Name: BodyIntaractableDistance
       Entry: 4
       Data: 0.6
@@ -34231,7 +34231,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: _SubOffSet
+          m_StringArgument: _AddOffSet
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8455648898713683810
@@ -34348,6 +34348,7 @@ MonoBehaviour:
   customTexture: {fileID: 0}
   autoResizeTexture: 1
   targetAspectRatio: 0
+  aspectFitMode: 0
   applyAspectToResize: 0
   applyAspectToBlit: 0
   trimToGammaZone: 1
@@ -36232,7 +36233,7 @@ MonoBehaviour:
       Data: 0.6
     - Name: NearDistance
       Entry: 4
-      Data: 0.2
+      Data: 0.3
   _udonSharpBackingUdonBehaviour: {fileID: 2552426264529916497}
   Tablet: {fileID: 2958588557672475006}
 --- !u!114 &2552426264529916497
