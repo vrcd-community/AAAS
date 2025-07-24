@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: SlideUserController
+  m_Name: SlideController
   m_EditorClassIdentifier: 
   udonAssembly: 
   assemblyError: 
@@ -19,7 +19,7 @@ MonoBehaviour:
   compiledVersion: 2
   behaviourSyncMode: 1
   hasInteractEvent: 0
-  scriptID: 8261248404678409177
+  scriptID: 3564016253229188047
   serializationData:
     SerializedBytes: 
     ReferencedUnityObjects: []

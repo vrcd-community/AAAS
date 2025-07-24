@@ -1,15 +1,16 @@
-﻿using JetBrains.Annotations;
+﻿using AAAS.Slide.Core;
+using JetBrains.Annotations;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Components;
 
-namespace AAAS.Slide.Core {
+namespace AAAS.Slide.Controller {
     /// <summary>
     /// Controller for user interactions with the slide system.
     /// </summary>
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class SlideUserController : UdonSharpBehaviour {
-        [SerializeField] private SlideCore slideCore;
+    public class SlideController : UdonSharpBehaviour {
+        [SerializeField] protected SlideCore slideCore;
 
         [SerializeField] private VRCUrlInputField urlInputField;
 
