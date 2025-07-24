@@ -17,6 +17,11 @@ namespace AAAS.Slide.Core {
         private VRCUrl _slideUrl;
 
         [PublicAPI]
+        public SlideCoreStatus Status { get; private set; } = SlideCoreStatus.NoSlideLoaded;
+        [PublicAPI]
+        public VideoError LastVideoError { get; private set; } = VideoError.Unknown;
+
+        [PublicAPI]
         public VRCUrl SlideUrl {
             get => _slideUrl;
             private set {
@@ -47,6 +52,9 @@ namespace AAAS.Slide.Core {
         /// Seconds Per Page
         /// </summary>
         private double _step;
+
+        private UdonSharpBehaviour[] _slideStatueChangedEventListeners = new UdonSharpBehaviour[0];
+        private string[] _slideStatueChangedEventNames = new string[0];
 
         private void Start() {
             if (!videoPlayer) {
@@ -96,11 +104,47 @@ namespace AAAS.Slide.Core {
             RequestSerialization();
         }
 
+        [PublicAPI]
+        public bool _AddSlideStatueChangedEventListener(UdonSharpBehaviour listener, string eventName) {
+            if (!listener || string.IsNullOrWhiteSpace(eventName))
+                return false;
+
+            _slideStatueChangedEventListeners = ArrayTools.Add(_slideStatueChangedEventListeners, listener);
+            _slideStatueChangedEventNames = ArrayTools.Add(_slideStatueChangedEventNames, eventName);
+
+            return true;
+        }
+
+        private void SendSlideStatueChangedEvent() {
+            for (var listenerIndex = 0; listenerIndex < _slideStatueChangedEventListeners.Length; listenerIndex++) {
+                var listener = _slideStatueChangedEventListeners[listenerIndex];
+                var eventName = _slideStatueChangedEventNames[listenerIndex];
+
+                if (!listener) continue;
+
+                listener.SendCustomEvent(eventName);
+            }
+        }
+
+        private void UpdateSlideStatus(SlideCoreStatus status, VideoError error = VideoError.Unknown) {
+            if (Status == status && LastVideoError == error)
+                return;
+
+            Status = status;
+            LastVideoError = error;
+
+            SendSlideStatueChangedEvent();
+        }
+
         private void LoadSlideInternal() {
             if (SlideUrl == null || SlideUrl.Get() == "") {
                 Debug.LogError("[SlideCore] Slide URL is empty, cannot load video.");
+                UpdateSlideStatus(SlideCoreStatus.VideoError, VideoError.InvalidURL);
+
                 return;
             }
+
+            UpdateSlideStatus(SlideCoreStatus.Loading);
 
             SlidePageIndex = 0;
             _step = 0;
@@ -146,6 +190,8 @@ namespace AAAS.Slide.Core {
 
             var errorType = (VideoError)videoError;
             Debug.LogError($"[SlideCore] Video error occurred: {errorType}");
+
+            UpdateSlideStatus(SlideCoreStatus.VideoError, errorType);
         }
 
         public void _OnSlideVideoReady() {
@@ -153,6 +199,7 @@ namespace AAAS.Slide.Core {
 
             CalculateSlideData();
             UpdatePlayerPosition();
+            UpdateSlideStatus(SlideCoreStatus.Ready);
         }
 
     #endregion
@@ -167,5 +214,12 @@ namespace AAAS.Slide.Core {
         }
 
     #endregion
+    }
+
+    public enum SlideCoreStatus {
+        NoSlideLoaded,
+        Loading,
+        Ready,
+        VideoError
     }
 }
