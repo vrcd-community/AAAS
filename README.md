@@ -106,7 +106,7 @@ U# 编译器会对 scene 、 prefab 和 scene 文件进行大量 GUID 变更用�
 #### 选项 1)：使用 Python 运行时
 
 ```sh
-git config filter.usharp-prefab.clean "python .gitscripts/filter_usharp.py"
+git config filter.usharp-prefab.process "python .gitscripts/filter_usharp_process.py"
 ```
 
 #### 选项 2)：使用 Node.js 运行时
