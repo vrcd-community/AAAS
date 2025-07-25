@@ -28,12 +28,12 @@ namespace AAAS.Slide.VideoPlayer {
         private void Start() {
             if (!videoPlayerTexture) {
                 enabled = false;
-                Debug.LogError("[UnitySlideVideoPlayer] Video player texture is not assigned. Please assign a texture in the inspector.");
+                Debug.LogError("[UnitySlideVideoPlayer] Video player texture is not assigned. Please assign a texture in the inspector.", this);
             }
 
             if (!videoPlayer) {
                 enabled = false;
-                Debug.LogError("[UnitySlideVideoPlayer] Video player is not assigned. Please assign a video player in the inspector.");
+                Debug.LogError("[UnitySlideVideoPlayer] Video player is not assigned. Please assign a video player in the inspector.", this);
             }
         }
 
