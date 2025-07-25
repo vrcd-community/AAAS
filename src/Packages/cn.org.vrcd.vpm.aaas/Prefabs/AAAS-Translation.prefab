@@ -310,6 +310,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 211496612467523001}
+  InitAtStart: 1
   currentLanguage: zh-CN
   translates:
   - {fileID: 5244478819398167913}
