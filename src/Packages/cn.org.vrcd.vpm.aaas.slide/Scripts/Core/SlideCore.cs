@@ -40,6 +40,7 @@ namespace AAAS.Slide.Core {
                 Debug.Log("Current slide page index: " + value);
                 _slidePageIndex = value;
                 UpdatePlayerPosition();
+                SendSlidePageChangedEvent();
             }
         }
 
@@ -55,6 +56,9 @@ namespace AAAS.Slide.Core {
 
         private UdonSharpBehaviour[] _slideStatueChangedEventListeners = new UdonSharpBehaviour[0];
         private string[] _slideStatueChangedEventNames = new string[0];
+
+        private UdonSharpBehaviour[] _slidePageChangedEventListeners = new UdonSharpBehaviour[0];
+        private string[] _slidePageChangedEventNames = new string[0];
 
         private void Start() {
             if (!videoPlayer) {
@@ -134,6 +138,28 @@ namespace AAAS.Slide.Core {
             LastVideoError = error;
 
             SendSlideStatueChangedEvent();
+        }
+
+        [PublicAPI]
+        public bool _AddSlidePageChangedEventListener(UdonSharpBehaviour listener, string eventName) {
+            if (!listener || string.IsNullOrWhiteSpace(eventName))
+                return false;
+
+            _slidePageChangedEventListeners = ArrayTools.Add(_slidePageChangedEventListeners, listener);
+            _slidePageChangedEventNames = ArrayTools.Add(_slidePageChangedEventNames, eventName);
+
+            return true;
+        }
+
+        private void SendSlidePageChangedEvent() {
+            for (var listenerIndex = 0; listenerIndex < _slidePageChangedEventListeners.Length; listenerIndex++) {
+                var listener = _slidePageChangedEventListeners[listenerIndex];
+                var eventName = _slidePageChangedEventNames[listenerIndex];
+
+                if (!listener) continue;
+
+                listener.SendCustomEvent(eventName);
+            }
         }
 
         private void LoadSlideInternal() {
