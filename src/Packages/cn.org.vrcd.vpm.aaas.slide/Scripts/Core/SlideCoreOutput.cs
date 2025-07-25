@@ -63,7 +63,23 @@ namespace AAAS.Slide.Core {
             return true;
         }
 
+        private void SendOutputChangedEventListener() {
+            for (var index = 0; index < _outputChangedEventListeners.Length; index++) {
+                var listener = _outputChangedEventListeners[index];
+                var eventName = _outputChangedEventNames[index];
+
+                if (!listener) return;
+
+                listener.SendCustomEvent(eventName);
+            }
+        }
+
         private void UpdateOutputTexture() {
+            UpdateOutputTextureCore();
+            SendOutputChangedEventListener();
+        }
+
+        private void UpdateOutputTextureCore() {
             // Switch for unnormal status handle
             switch (slideCore.Status) {
                 case SlideCoreStatus.NoSlideLoaded:
