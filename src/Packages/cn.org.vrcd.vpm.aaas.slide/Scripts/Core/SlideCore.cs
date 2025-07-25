@@ -39,11 +39,10 @@ namespace AAAS.Slide.Core {
             private set {
                 if (value < 0 || value >= PageTotal) {
                     Debug.LogWarning($"[SlideCore] Attempted to set SlidePageIndex out of bounds: {value}. " +
-                                     $"Valid range is 0 to {PageTotal - 1}.");
+                                     $"Valid range is 0 to {PageTotal - 1}.", this);
                     return;
                 }
 
-                Debug.Log("Current slide page index: " + value);
                 _slidePageIndex = value;
                 UpdatePlayerPosition();
                 SendSlidePageChangedEvent();
@@ -71,7 +70,7 @@ namespace AAAS.Slide.Core {
                 enabled = false;
 
                 Debug.LogError(
-                    "[SlideCore] Video player is not assigned. Please assign a video player in the inspector.");
+                    "[SlideCore] Video player is not assigned. Please assign a video player in the inspector.", this);
                 return;
             }
 
@@ -174,7 +173,7 @@ namespace AAAS.Slide.Core {
 
         private void LoadSlideInternal() {
             if (SlideUrl == null || SlideUrl.Get() == "") {
-                Debug.LogError("[SlideCore] Slide URL is empty, cannot load video.");
+                Debug.LogError("[SlideCore] Slide URL is empty, cannot load video.", this);
                 UpdateSlideStatus(SlideCoreStatus.VideoError, VideoError.InvalidURL);
 
                 return;
@@ -215,23 +214,23 @@ namespace AAAS.Slide.Core {
             1)] // won't affect local "network" event call, see https://creators.vrchat.com/worlds/udon/networking/events#rate-limiting
         public void _OnSlideVideoError(uint videoError) {
             if (NetworkCalling.CallingPlayer == null) {
-                Debug.LogWarning("[SlideCore] Video error received with no calling player, ignoring.");
+                Debug.LogWarning("[SlideCore] Video error received with no calling player, ignoring.", this);
                 return;
             }
 
             if (!NetworkCalling.CallingPlayer.isLocal) {
-                Debug.LogWarning("[SlideCore] Video error received from non-local player, ignoring.");
+                Debug.LogWarning("[SlideCore] Video error received from non-local player, ignoring.", this);
                 return;
             }
 
             var errorType = (VideoError)videoError;
-            Debug.LogError($"[SlideCore] Video error occurred: {errorType}");
+            Debug.LogError($"[SlideCore] Video error occurred: {errorType}", this);
 
             UpdateSlideStatus(SlideCoreStatus.VideoError, errorType);
         }
 
         public void _OnSlideVideoReady() {
-            Debug.Log("[SlideCore] Video is ready to play.");
+            Debug.Log("[SlideCore] Video is ready to play.", this);
 
             CalculateSlideData();
             UpdatePlayerPosition();
