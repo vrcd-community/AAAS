@@ -37,6 +37,12 @@ namespace AAAS.Slide.Core {
         public int SlidePageIndex {
             get => _slidePageIndex;
             private set {
+                if (value < 0 || value >= PageTotal) {
+                    Debug.LogWarning($"[SlideCore] Attempted to set SlidePageIndex out of bounds: {value}. " +
+                                     $"Valid range is 0 to {PageTotal - 1}.");
+                    return;
+                }
+
                 Debug.Log("Current slide page index: " + value);
                 _slidePageIndex = value;
                 UpdatePlayerPosition();
@@ -91,20 +97,24 @@ namespace AAAS.Slide.Core {
         [PublicAPI]
         public void _NextPage() {
             if (!videoPlayer.GetIsReady()) return;
-            if (SlidePageIndex >= PageTotal) return;
+
+            var targetPageIndex = SlidePageIndex + 1;
+            if (targetPageIndex >= PageTotal) return;
 
             TakeOwnership();
-            SlidePageIndex++;
+            SlidePageIndex = targetPageIndex;
             RequestSerialization();
         }
 
         [PublicAPI]
         public void _PreviousPage() {
             if (!videoPlayer.GetIsReady()) return;
-            if (SlidePageIndex <= 0) return;
+
+            var targetPageIndex = SlidePageIndex - 1;
+            if (targetPageIndex < 0) return;
 
             TakeOwnership();
-            SlidePageIndex--;
+            SlidePageIndex = targetPageIndex;
             RequestSerialization();
         }
 
