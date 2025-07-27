@@ -10527,21 +10527,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 327875965803744718, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
-      propertyPath: targetMesh.Array.data[6]
-      value: 
-      objectReference: {fileID: 1174454717}
+      propertyPath: targetMesh.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 327875965803744718, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
-      propertyPath: targetMesh.Array.data[7]
+      propertyPath: targetMesh.Array.data[0]
       value: 
-      objectReference: {fileID: 111821930}
+      objectReference: {fileID: 1135834675}
     - target: {fileID: 327875965803744718, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
-      propertyPath: targetMesh.Array.data[8]
+      propertyPath: targetMesh.Array.data[1]
       value: 
       objectReference: {fileID: 880580181}
     - target: {fileID: 327875965803744718, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
-      propertyPath: targetMesh.Array.data[9]
+      propertyPath: targetMesh.Array.data[2]
       value: 
-      objectReference: {fileID: 1135834675}
+      objectReference: {fileID: 1174454717}
+    - target: {fileID: 327875965803744718, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
+      propertyPath: targetMesh.Array.data[3]
+      value: 
+      objectReference: {fileID: 111821930}
     - target: {fileID: 592315218130934508, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
