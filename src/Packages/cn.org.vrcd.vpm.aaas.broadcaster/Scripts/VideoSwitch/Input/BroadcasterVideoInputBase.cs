@@ -1,0 +1,57 @@
+using AAAS.Broadcaster.Tools;
+using JetBrains.Annotations;
+using UdonSharp;
+using UnityEngine;
+using VRC.Udon.Common.Interfaces;
+
+namespace AAAS.Broadcaster.VideoSwitch.Input
+{
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    public abstract class BroadcasterVideoInputBase : UdonSharpBehaviour {
+        [PublicAPI]
+        protected UdonSharpBehaviour[] _listeners = new UdonSharpBehaviour[0];
+        [PublicAPI]
+        protected string[] _eventNames = new string[0];
+        [PublicAPI]
+        protected string[] _nonce = new string[0];
+
+        [PublicAPI]
+        public virtual Texture GetVideoTexture()
+        {
+            return null;
+        }
+
+        [PublicAPI]
+        public virtual bool RegisterVideoTextureChangedListener(UdonSharpBehaviour listeners, string eventName, string nonce = "")
+        {
+            if (!listeners) {
+                Debug.LogWarning("[BroadcasterVideoInputBase] RegisterVideoTextureChangedReceiver called with null receiver.", this);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(eventName)) {
+                Debug.LogWarning("[BroadcasterVideoInputBase] RegisterVideoTextureChangedReceiver called with empty event name.", this);
+                return false;
+            }
+
+            _listeners = ArrayTools.Add(_listeners, listeners);
+            _eventNames = ArrayTools.Add(_eventNames, eventName);
+            _nonce = ArrayTools.Add(_nonce, nonce);
+            return true;
+        }
+
+        [PublicAPI]
+        protected virtual void NotifyVideoTextureChanged() {
+            for (var index = 0; index < _listeners.Length; index++) {
+                var listener = _listeners[index];
+                var eventName = _eventNames[index];
+                var nonce = _nonce[index];
+
+                if (listener && string.IsNullOrEmpty(eventName))
+                    continue;
+
+                _listeners[index].SendCustomNetworkEvent(NetworkEventTarget.Self, eventName, nonce);
+            }
+        }
+    }
+}
