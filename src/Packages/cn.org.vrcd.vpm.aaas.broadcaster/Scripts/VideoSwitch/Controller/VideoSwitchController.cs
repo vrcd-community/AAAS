@@ -1,5 +1,4 @@
-﻿using System;
-using AAAS.Broadcaster.VideoSwitch.Core;
+﻿using AAAS.Broadcaster.VideoSwitch.Core;
 using AAAS.Broadcaster.VideoSwitch.Input;
 using JetBrains.Annotations;
 using UdonSharp;
