@@ -1,0 +1,23 @@
+{
+  "name": "cn.org.vrcd.vpm.broadcaster",
+  "displayName": "An Augmented Assembly System - Broadcaster",
+  "version": "0.1.0",
+  "hideInEditor": false,
+  "description": "支持多视频源输入和音频源开关的广播系统",
+  "unity": "2022.3",
+  "author": {
+    "email": "us@vrcd.org.cn",
+    "name": "VRCD",
+    "url": "https://www.vrcd.org.cn"
+  },
+  "changelogUrl": "https://github.com/vrcd-community/AAAS/releases",
+  "documentationUrl": "https://github.com/vrcd-community/AAAS/",
+  "license": "MIT",
+  "licensesUrl": "https://github.com/vrcd-community/AAAS/blob/main/LICENSE.md",
+  "keywords": [
+    "vrchat"
+  ],
+  "vpmDependencies": {
+    "com.vrchat.worlds": ">=3.5.0"
+  }
+}
