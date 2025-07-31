@@ -18,6 +18,7 @@
     "vrchat"
   ],
   "vpmDependencies": {
-    "cn.org.vrcd.vpm.aaas.slide": "^0.1.0"
+    "cn.org.vrcd.vpm.aaas.slide": "^0.1.0",
+    "cn.org.vrcd.vpm.aaas.broadcaster": "^0.1.0"
   }
 }
