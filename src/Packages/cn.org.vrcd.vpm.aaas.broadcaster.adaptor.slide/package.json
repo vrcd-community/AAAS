@@ -1,9 +1,9 @@
 {
-  "name": "cn.org.vrcd.vpm.aaas.slide-to-broadcaster-input",
-  "displayName": "An Augmented Assembly System - Slide to Broadcaster Input",
+  "name": "cn.org.vrcd.vpm.aaas.broadcaster.adaptor.slide",
+  "displayName": "An Augmented Assembly System - Broadcaster - Slide Adaptor",
   "version": "0.1.0",
   "hideInEditor": false,
-  "description": "AAAS - Slide 转 AAAS - Broadcaster 输入源",
+  "description": "AAAS - Slide 的 AAAS - Broadcaster 适配器",
   "unity": "2022.3",
   "author": {
     "email": "us@vrcd.org.cn",
