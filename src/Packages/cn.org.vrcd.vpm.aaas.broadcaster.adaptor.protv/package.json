@@ -1,0 +1,24 @@
+{
+  "name": "cn.org.vrcd.vpm.aaas.broadcaster.adaptor.protv",
+  "displayName": "An Augmented Assembly System - Broadcaster - ProTV Adaptor",
+  "version": "0.1.0",
+  "hideInEditor": false,
+  "description": "ProTV 的 AAAS - Broadcaster 适配器",
+  "unity": "2022.3",
+  "author": {
+    "email": "us@vrcd.org.cn",
+    "name": "VRCD",
+    "url": "https://www.vrcd.org.cn"
+  },
+  "changelogUrl": "https://github.com/vrcd-community/AAAS/releases",
+  "documentationUrl": "https://github.com/vrcd-community/AAAS/",
+  "license": "MIT",
+  "licensesUrl": "https://github.com/vrcd-community/AAAS/blob/main/LICENSE.md",
+  "keywords": [
+    "vrchat"
+  ],
+  "vpmDependencies": {
+    "dev.architech.protv": "^3.0.0",
+    "cn.org.vrcd.vpm.aaas.broadcaster": "^0.1.0"
+  }
+}

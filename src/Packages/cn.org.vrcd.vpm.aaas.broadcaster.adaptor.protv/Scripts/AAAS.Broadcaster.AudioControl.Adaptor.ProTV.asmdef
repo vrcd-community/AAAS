@@ -1,0 +1,19 @@
+﻿{
+    "name": "AAAS.Broadcaster.AudioControl.Adaptor.ProTV",
+    "rootNamespace": "AAAS.Broadcaster.AudioControl.Adaptor.ProTV",
+    "references": [
+        "GUID:99835874ee819da44948776e0df4ff1d",
+        "GUID:c037cdcc4e0249c9b2707aaeef94e5d4",
+        "GUID:a34edcc090795d24ebafb53fec5b4ca8",
+        "GUID:5b5aaf99749535a42aedbc3313fc3314"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
