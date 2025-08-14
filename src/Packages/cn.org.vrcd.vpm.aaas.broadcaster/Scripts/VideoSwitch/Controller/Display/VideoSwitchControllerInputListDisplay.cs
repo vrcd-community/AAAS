@@ -30,8 +30,15 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
                 var text = itemGameObject.GetComponentInChildren<Text>();
                 text.text = $"Input #{index}";
 
-                itemController.SetInputIndex(index);
+                itemController.inputIndex = index;
                 itemController.videoSwitchController = videoSwitchController;
+
+                var previewer = itemGameObject.GetComponentInChildren<VideoInputPreviewer>();
+                if (!previewer)
+                    continue;
+
+                var videoInput = videoInputs[index];
+                previewer.videoInput = videoInput;
             }
         }
     }
