@@ -1,0 +1,18 @@
+﻿{
+    "name": "AAAS.Broadcaster.VideoSwitch.Input.Slide",
+    "rootNamespace": "AAAS.Broadcaster.VideoSwitch.Input.Slide",
+    "references": [
+        "GUID:99835874ee819da44948776e0df4ff1d",
+        "GUID:75c74bd68a48c5448abe719020886af2",
+        "GUID:c037cdcc4e0249c9b2707aaeef94e5d4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
