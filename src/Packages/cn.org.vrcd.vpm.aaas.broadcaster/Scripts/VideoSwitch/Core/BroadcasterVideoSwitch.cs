@@ -94,6 +94,14 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
 
             CurrentInputIndex = index;
             _currentOutputTexture = videoInputs[CurrentInputIndex].GetVideoTexture();
+
+            if (!_currentOutputTexture) {
+                Debug.LogError(
+                    $"[BroadcasterVideoSwitch] Failed to get video texture for input index {CurrentInputIndex}. The texture is null.",
+                    this);
+                return false;
+            }
+
             NotifyVideoTextureChanged();
 
             return true;
