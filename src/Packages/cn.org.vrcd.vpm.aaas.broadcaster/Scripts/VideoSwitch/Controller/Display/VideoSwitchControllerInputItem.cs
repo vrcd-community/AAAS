@@ -12,8 +12,5 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
 
         [PublicAPI]
         public void SwitchInput() => videoSwitchController.SwitchVideoInput(inputIndex);
-
-        [PublicAPI]
-        public void SetInputIndex(int index) => inputIndex = index;
     }
 }
