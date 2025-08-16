@@ -583,6 +583,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8046315279312662760, guid: 2e23433ee68e7be4fa583c2133cd0a73, type: 3}
   m_PrefabInstance: {fileID: 6316448251223219723}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &274216229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 137172973545053602, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
+  m_PrefabInstance: {fileID: 3334063170875684487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &285798131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8706091459955418548, guid: 8a58d816f3175e5459f5ea13b8bfb51c, type: 3}
@@ -3401,7 +3406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
       propertyPath: NetworkIDs.Array.size
-      value: 116
+      value: 117
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
       propertyPath: DynamicMaterials.Array.size
@@ -3873,7 +3878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
       propertyPath: NetworkIDs.Array.data[116].ID
-      value: 182
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
       propertyPath: NetworkIDs.Array.data[117].ID
@@ -5426,7 +5431,7 @@ PrefabInstance:
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
       propertyPath: NetworkIDs.Array.data[116].gameObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 274216229}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
       propertyPath: NetworkIDs.Array.data[117].gameObject
       value: 
@@ -10776,6 +10781,10 @@ PrefabInstance:
     - target: {fileID: 2326787555557354955, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519495960217243018, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
+      propertyPath: _syncMethod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2524840722972506044, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
       propertyPath: m_AnchorMax.y
