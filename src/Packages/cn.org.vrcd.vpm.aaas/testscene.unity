@@ -10969,6 +10969,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4770239071734296438, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812718951776896006, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11466,28 +11470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3334063170875684499 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1726370672309520753, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
-  m_PrefabInstance: {fileID: 3334063170875684487}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3334063170875684500 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7429223416052746452, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
-  m_PrefabInstance: {fileID: 3334063170875684487}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3334063170875684501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9193038714029515405, guid: e89dc2406760c584994ea6e98c25bf9b, type: 3}
@@ -11717,11 +11699,11 @@ PrefabInstance:
     - target: {fileID: 3936451330451078709, guid: 3ebcd0d652568b3419723730c049ba46, type: 3}
       propertyPath: texts.Array.data[16]
       value: 
-      objectReference: {fileID: 3334063170875684499}
+      objectReference: {fileID: 0}
     - target: {fileID: 3936451330451078709, guid: 3ebcd0d652568b3419723730c049ba46, type: 3}
       propertyPath: texts.Array.data[17]
       value: 
-      objectReference: {fileID: 3334063170875684500}
+      objectReference: {fileID: 0}
     - target: {fileID: 3936451330451078709, guid: 3ebcd0d652568b3419723730c049ba46, type: 3}
       propertyPath: texts.Array.data[18]
       value: 
