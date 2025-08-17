@@ -14,6 +14,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Input.Slide {
 
         internal void NotifySlideOutputTextureChanged(Texture texture) {
             OutputTexture = texture;
+            NotifyVideoTextureChanged();
         }
 
     }
