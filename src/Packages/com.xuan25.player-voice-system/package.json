@@ -1,0 +1,23 @@
+{
+  "name": "com.xuan25.player-voice-system",
+  "displayName": "Xuan25 Player Voice System",
+  "version": "0.1.0",
+  "hideInEditor": false,
+  "description": "Player Voice System for VRChat. Snapshot: https://github.com/xuan25/Xuan25-VRC-Common-Utilities/tree/302e3cf1e583c45a8e9ca4726a4611de11489b4d/PlayerVoiceSystem",
+  "unity": "2022.3",
+  "author": {
+    "email": "xuan@xuan25.com",
+    "name": "Xuan25",
+    "url": "https://xuan25.com"
+  },
+  "changelogUrl": "https://github.com/xuan25/Xuan25-VRC-Common-Utilities/commits/main/PlayerVoiceSystem",
+  "documentationUrl": "https://github.com/xuan25/Xuan25-VRC-Common-Utilities/",
+  "license": "MIT",
+  "licensesUrl": "https://github.com/xuan25/Xuan25-VRC-Common-Utilities/blob/main/LICENSE.md",
+  "keywords": [
+    "vrchat"
+  ],
+  "vpmDependencies": {
+    "com.vrchat.worlds": "^3.8.1"
+  }
+}
