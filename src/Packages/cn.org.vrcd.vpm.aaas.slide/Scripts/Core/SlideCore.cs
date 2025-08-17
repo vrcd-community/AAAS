@@ -7,6 +7,7 @@ using UnityEngine;
 using VRC.SDK3.Components.Video;
 using VRC.SDK3.UdonNetworkCalling;
 using VRC.SDKBase;
+using VRC.Udon.Common.Interfaces;
 
 namespace AAAS.Slide.Core {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
@@ -81,6 +82,31 @@ namespace AAAS.Slide.Core {
         [PublicAPI]
         public Texture _GetSlidePlayerTexture() {
             return videoPlayer.GetVideoPlayerTexture();
+        }
+
+        [PublicAPI]
+        public void _Unload() {
+            TakeOwnership();
+
+            SlidePageIndex = 0;
+            SlideUrl = null;
+
+            RequestSerialization();
+
+            SendCustomNetworkEvent(NetworkEventTarget.All, nameof(RequestUnloadSlide));
+        }
+
+        public void RequestUnloadSlide() {
+            if (NetworkCalling.InNetworkCall && Utilities.IsValid(NetworkCalling.CallingPlayer)) {
+                var caller = NetworkCalling.CallingPlayer;
+                Debug.Log($"[SlideCore] Requesting slide unload by [{caller.playerId}] {NetworkCalling.CallingPlayer.displayName}.", this);
+            }
+            else {
+                Debug.Log("[SlideCore] Requesting slide unload without a calling player.", this);
+            }
+
+            videoPlayer.Unload();
+            UpdateSlideStatus(SlideCoreStatus.NoSlideLoaded);
         }
 
         [PublicAPI]
@@ -172,7 +198,12 @@ namespace AAAS.Slide.Core {
         }
 
         private void LoadSlideInternal() {
-            if (SlideUrl == null || SlideUrl.Get() == "") {
+            if (SlideUrl == null) {
+                Debug.LogWarning("[SlideCore] Slide URL is null, cannot load video. It maybe cause by a unload action", this);
+                return;
+            }
+
+            if (SlideUrl.Get() == "") {
                 Debug.LogError("[SlideCore] Slide URL is empty, cannot load video.", this);
                 UpdateSlideStatus(SlideCoreStatus.VideoError, VideoError.InvalidURL);
 
