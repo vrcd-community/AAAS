@@ -128,6 +128,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 7963766841192559772}
+  targets: []
   scalerOverrideIfTriggered: 0
   gainScaler: 1.5
   distanceNearScaler: 1
@@ -137,7 +138,6 @@ MonoBehaviour:
   isEnabledLocal: 1
   activeUpdate: 1
   playerMask: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  targets: []
 --- !u!114 &7963766841192559772
 MonoBehaviour:
   m_ObjectHideFlags: 0
