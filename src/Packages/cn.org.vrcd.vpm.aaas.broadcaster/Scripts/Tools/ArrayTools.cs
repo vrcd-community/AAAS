@@ -12,5 +12,20 @@ namespace AAAS.Broadcaster.Tools {
             newArray[array.Length] = item;
             return newArray;
         }
+
+        public static T[] AddRange<T>(T[] array, T[] items) {
+            if (array == null || array.Length == 0) {
+                return items ?? new T[0];
+            }
+
+            if (items == null || items.Length == 0) {
+                return array;
+            }
+
+            var newArray = new T[array.Length + items.Length];
+            Array.Copy(array, newArray, array.Length);
+            Array.Copy(items, 0, newArray, array.Length, items.Length);
+            return newArray;
+        }
     }
 }
