@@ -13,6 +13,8 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
         [SerializeField] private BroadcasterVideoSwitchNetworking networking;
         [SerializeField] private BroadcasterVideoInputBase[] videoInputs = new BroadcasterVideoInputBase[0];
 
+        [SerializeField] [CanBeNull] private BroadcasterVideoSwitch parentSwitch;
+
         public int CurrentInputIndex {
             get => networking.CurrentInputIndex;
             private set => networking.SetInputIndex(value);
@@ -24,11 +26,16 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
         private string[] _eventNames = new string[0];
 
         private void Start() {
-            if (videoInputs.Length == 0) {
+            if (videoInputs.Length == 0 && (!parentSwitch || parentSwitch._GetVideoInputs().Length == 0)) {
                 Debug.LogError("[BroadcasterVideoSwitch] No video inputs registered. VIDEO SWITCH WILL SHUTDOWN NOW.",
                     this);
                 Shutdown();
                 return;
+            }
+
+            if (parentSwitch) {
+                Debug.Log("[BroadcasterVideoSwitch] Inheriting video inputs from parent switch.", this);
+                videoInputs = ArrayTools.AddRange(videoInputs, parentSwitch._GetVideoInputs());
             }
 
             for (var index = 0; index < videoInputs.Length; index++) {
