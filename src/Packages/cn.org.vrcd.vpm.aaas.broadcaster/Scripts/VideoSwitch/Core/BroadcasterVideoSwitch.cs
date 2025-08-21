@@ -16,7 +16,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
         [SerializeField] [CanBeNull] private BroadcasterVideoSwitch parentSwitch;
 
         public int CurrentInputIndex {
-            get => networking.CurrentInputIndex;
+            get => networking.GetInputIndex();
             private set => networking.SetInputIndex(value);
         }
 

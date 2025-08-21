@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using UdonSharp;
+﻿using UdonSharp;
 using VRC.SDKBase;
 
 namespace AAAS.Broadcaster.VideoSwitch.Core {
@@ -8,16 +7,19 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
         [UdonSynced] [FieldChangeCallback(nameof(CurrentInputIndex))]
         private int _currentInputIndex;
 
-        [PublicAPI]
-        internal int CurrentInputIndex {
+        private int CurrentInputIndex {
             get => _currentInputIndex;
-            private set {
+            set {
                 _currentInputIndex = value;
                 _broadcasterSwitch.SendCustomEvent(nameof(BroadcasterVideoSwitch._OnVideoInputIndexChanged));
             }
         }
 
         private BroadcasterVideoSwitch _broadcasterSwitch;
+
+        internal int GetInputIndex() {
+            return _currentInputIndex;
+        }
 
         internal void SetInputIndex(int index) {
             TakeOwnership();
