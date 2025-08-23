@@ -5,25 +5,34 @@ using JetBrains.Annotations;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.UdonNetworkCalling;
+using VRC.SDKBase;
 
 namespace AAAS.Broadcaster.VideoSwitch.Core {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    [RequireComponent(typeof(BroadcasterVideoSwitchNetworking))]
     public sealed class BroadcasterVideoSwitch : UdonSharpBehaviour {
-        [SerializeField] private BroadcasterVideoSwitchNetworking networking;
         [SerializeField] private BroadcasterVideoInputBase[] videoInputs = new BroadcasterVideoInputBase[0];
 
         [SerializeField] [CanBeNull] private BroadcasterVideoSwitch parentSwitch;
-
-        public int CurrentInputIndex {
-            get => networking.GetInputIndex();
-            private set => networking.SetInputIndex(value);
-        }
 
         [CanBeNull] private Texture _currentOutputTexture;
 
         private UdonSharpBehaviour[] _listeners = new UdonSharpBehaviour[0];
         private string[] _eventNames = new string[0];
+
+    #region Network Sync Properties
+
+        [UdonSynced] [FieldChangeCallback(nameof(CurrentInputIndex))]
+        private int _currentInputIndex;
+
+        public int CurrentInputIndex {
+            get => _currentInputIndex;
+            private set {
+                _currentInputIndex = value;
+                _OnVideoInputIndexChanged();
+            }
+        }
+
+    #endregion
 
         private void Start() {
             if (videoInputs.Length == 0 && (!parentSwitch || parentSwitch._GetVideoInputs().Length == 0)) {
@@ -99,7 +108,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
                 return false;
             }
 
-            CurrentInputIndex = index;
+            SetVideoInputIndexWithoutNotify(index);
             _currentOutputTexture = videoInputs[CurrentInputIndex].GetVideoTexture();
 
             if (!_currentOutputTexture) {
@@ -153,12 +162,11 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
                 "[BroadcasterVideoSwitch] Shutting down video switch due to no video inputs registered or other errors. See console for more details.",
                 this);
             enabled = false;
-            networking.enabled = false;
         }
 
-    #region Networking Event Handle
+    #region Networking
 
-        public void _OnVideoInputIndexChanged() {
+        private void _OnVideoInputIndexChanged() {
             if (CurrentInputIndex < 0 || CurrentInputIndex >= videoInputs.Length) {
                 Debug.LogError(
                     $"Invalid video input index: {CurrentInputIndex}. Must be between 0 and {videoInputs.Length - 1}.",
@@ -167,6 +175,19 @@ namespace AAAS.Broadcaster.VideoSwitch.Core {
             }
 
             SwitchVideoInputInternal(CurrentInputIndex);
+        }
+
+        private void SetVideoInputIndexWithoutNotify(int index) {
+            TakeOwnership();
+            _currentInputIndex = index;
+            RequestSerialization();
+        }
+
+        private void TakeOwnership() {
+            if (Networking.GetOwner(gameObject).isLocal)
+                return;
+
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
 
     #endregion
