@@ -507,7 +507,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 2203226083846762727}
-  videoTexture: {fileID: 8400000, guid: 327140003f89c4447bc6f1923d64d9a5, type: 2}
+  videoTexture: {fileID: 8400000, guid: 5e62b08bcde7e3e498da586993cfd524, type: 2}
 --- !u!114 &2203226083846762727
 MonoBehaviour:
   m_ObjectHideFlags: 0
