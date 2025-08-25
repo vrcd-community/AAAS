@@ -13,7 +13,7 @@ namespace AAAS.LiveCamera.Positions {
         protected string[] positionChangedEventNonces = new string[0];
         
         [PublicAPI]
-        public virtual Transform GetCameraTransform() {
+        public virtual Transform _GetCameraTransform() {
             return transform;
         }
 
