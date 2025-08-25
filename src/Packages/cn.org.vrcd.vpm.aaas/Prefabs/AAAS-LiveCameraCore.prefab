@@ -73,7 +73,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 257823
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: ae6031ff01addb540a063d1d4569b853, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 3689209160084650023}
   previewerCamera: {fileID: 5087291916235085290}
-  liveCameraManager: {fileID: 752465667834875913}
   cameraPositionsManager: {fileID: 5220528360474992597}
   previewerTextures: []
+  updateInterval: 0.1
 --- !u!114 &3689209160084650023
 MonoBehaviour:
   m_ObjectHideFlags: 0
