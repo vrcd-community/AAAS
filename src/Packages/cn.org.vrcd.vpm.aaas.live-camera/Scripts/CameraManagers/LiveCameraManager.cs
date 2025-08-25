@@ -83,17 +83,19 @@ namespace AAAS.LiveCamera.CameraManagers {
                 return false;
             }
 
+            var positionTransform = position._GetCameraTransform();
+
             TakeOwnership();
             _currentCameraPositionIndex = index;
             RequestSerialization();
             
-            liveCamera.transform.SetPositionAndRotation(position.transform.position, position.transform.rotation);
+            liveCamera.transform.SetPositionAndRotation(positionTransform.position, positionTransform.rotation);
             return true;
         }
 
         private void ChangeCameraPositionInternal(int index) {
-            var position = cameraPositionsManager.cameraPositions[index];
-            liveCamera.transform.SetPositionAndRotation(position.transform.position, position.transform.rotation);
+            var positionTransform = cameraPositionsManager.cameraPositions[index]._GetCameraTransform();
+            liveCamera.transform.SetPositionAndRotation(positionTransform.position, positionTransform.rotation);
         }
 
         // "a network event which should only be called by the local player"
