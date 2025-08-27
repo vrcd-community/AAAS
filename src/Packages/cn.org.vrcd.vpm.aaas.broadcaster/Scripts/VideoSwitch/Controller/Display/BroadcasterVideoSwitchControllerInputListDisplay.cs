@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public sealed class VideoSwitchControllerInputListDisplay : UdonSharpBehaviour {
-        [SerializeField] private VideoSwitchController videoSwitchController;
+    public sealed class BroadcasterVideoSwitchControllerInputListDisplay : UdonSharpBehaviour {
+        [SerializeField] private BroadcasterVideoSwitchController videoSwitchController;
 
         [SerializeField] private GameObject inputItemTemplatePrefab;
 
@@ -25,7 +25,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
             var videoInputs = videoSwitchController.GetVideoInputs();
             for (var index = 0; index < videoInputs.Length; index++) {
                 var itemGameObject = Instantiate(inputItemTemplatePrefab, transform);
-                var itemController = itemGameObject.GetComponentInChildren<VideoSwitchControllerInputItem>();
+                var itemController = itemGameObject.GetComponentInChildren<BroadcasterVideoSwitchControllerInputItem>();
 
                 var text = itemGameObject.GetComponentInChildren<Text>();
                 text.text = $"Input #{index}";
@@ -33,7 +33,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
                 itemController.inputIndex = index;
                 itemController.videoSwitchController = videoSwitchController;
 
-                var previewer = itemGameObject.GetComponentInChildren<VideoInputPreviewer>();
+                var previewer = itemGameObject.GetComponentInChildren<BroadcasterVideoInputPreviewer>();
                 if (!previewer)
                     continue;
 

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: VideoSwitchControllerInputItem
+  m_Name: BroadcasterVideoSwitchController
   m_EditorClassIdentifier: 
   udonAssembly: 
   assemblyError: 
-  sourceCsScript: {fileID: 11500000, guid: d519212bd9444dc5be79ea50bb98795c, type: 3}
+  sourceCsScript: {fileID: 11500000, guid: 72ea8c305ee245c9a291d3c4c90c9e15, type: 3}
   scriptVersion: 2
   compiledVersion: 2
   behaviourSyncMode: 1
   hasInteractEvent: 0
-  scriptID: 4546015096686814059
+  scriptID: -4722006717888621548
   serializationData:
     SerializedBytes: 
     ReferencedUnityObjects: []
@@ -41,25 +41,25 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 1
-      Data: videoSwitchController
+      Data: videoSwitch
     - Name: $v
       Entry: 7
       Data: 2|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: <Name>k__BackingField
       Entry: 1
-      Data: videoSwitchController
+      Data: videoSwitch
     - Name: <UserType>k__BackingField
       Entry: 7
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: AAAS.Broadcaster.VideoSwitch.Controller.VideoSwitchController, AAAS.Broadcaster
+      Data: AAAS.Broadcaster.VideoSwitch.Core.BroadcasterVideoSwitch, AAAS.Broadcaster
     - Name: 
       Entry: 8
       Data: 
@@ -92,67 +92,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 6|JetBrains.Annotations.PublicAPIAttribute, UnityEngine.CoreModule
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: inputIndex
-    - Name: $v
-      Entry: 7
-      Data: 7|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
-    - Name: <Name>k__BackingField
-      Entry: 1
-      Data: inputIndex
-    - Name: <UserType>k__BackingField
-      Entry: 7
-      Data: 8|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.Int32, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: <SystemType>k__BackingField
-      Entry: 9
-      Data: 8
-    - Name: <SyncMode>k__BackingField
-      Entry: 7
-      Data: System.Nullable`1[[UdonSharp.UdonSyncMode, UdonSharp.Runtime]], mscorlib
-    - Name: 
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: <IsSerialized>k__BackingField
-      Entry: 5
-      Data: true
-    - Name: _fieldAttributes
-      Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 10|JetBrains.Annotations.PublicAPIAttribute, UnityEngine.CoreModule
+      Data: 6|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 

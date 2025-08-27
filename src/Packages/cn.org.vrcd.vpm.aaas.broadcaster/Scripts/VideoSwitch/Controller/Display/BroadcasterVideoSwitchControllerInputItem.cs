@@ -3,9 +3,9 @@ using UdonSharp;
 
 namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class VideoSwitchControllerInputItem : UdonSharpBehaviour {
+    public class BroadcasterVideoSwitchControllerInputItem : UdonSharpBehaviour {
         [PublicAPI]
-        public VideoSwitchController videoSwitchController;
+        public BroadcasterVideoSwitchController videoSwitchController;
 
         [PublicAPI]
         public int inputIndex;
