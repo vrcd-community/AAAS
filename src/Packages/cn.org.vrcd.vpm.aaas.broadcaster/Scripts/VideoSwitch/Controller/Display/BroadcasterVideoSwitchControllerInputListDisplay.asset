@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: VideoSwitchControllerInputListDisplay
+  m_Name: BroadcasterVideoSwitchControllerInputListDisplay
   m_EditorClassIdentifier: 
   udonAssembly: 
   assemblyError: 
@@ -19,7 +19,7 @@ MonoBehaviour:
   compiledVersion: 2
   behaviourSyncMode: 1
   hasInteractEvent: 0
-  scriptID: 4090498018142690414
+  scriptID: -4900451430861442428
   serializationData:
     SerializedBytes: 
     ReferencedUnityObjects: []
@@ -59,7 +59,8 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: AAAS.Broadcaster.VideoSwitch.Controller.VideoSwitchController, AAAS.Broadcaster
+      Data: AAAS.Broadcaster.VideoSwitch.Controller.BroadcasterVideoSwitchController,
+        AAAS.Broadcaster
     - Name: 
       Entry: 8
       Data: 

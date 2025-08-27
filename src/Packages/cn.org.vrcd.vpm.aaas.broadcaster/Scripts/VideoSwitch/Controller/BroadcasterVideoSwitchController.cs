@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace AAAS.Broadcaster.VideoSwitch.Controller {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class VideoSwitchController : UdonSharpBehaviour {
+    public class BroadcasterVideoSwitchController : UdonSharpBehaviour {
         [SerializeField] private BroadcasterVideoSwitch videoSwitch;
 
         private void Start() {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class VideoInputActiveIndicator : UdonSharpBehaviour {
+    public class BroadcasterVideoInputActiveIndicator : UdonSharpBehaviour {
         public BroadcasterVideoSwitch videoSwitch;
         public int inputIndex;
 

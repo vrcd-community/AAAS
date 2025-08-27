@@ -7,7 +7,7 @@ using VRC.SDK3.UdonNetworkCalling;
 
 namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class VideoInputPreviewer : UdonSharpBehaviour {
+    public class BroadcasterVideoInputPreviewer : UdonSharpBehaviour {
         [PublicAPI]
         public BroadcasterVideoInputBase videoInput;
 
