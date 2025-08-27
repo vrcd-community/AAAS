@@ -1,4 +1,5 @@
-﻿using AAAS.Broadcaster.VideoSwitch.Core;
+﻿using AAAS.Broadcaster.VideoSwitch.Controller;
+using AAAS.Broadcaster.VideoSwitch.Core;
 using AAAS.Broadcaster.VideoSwitch.Input;
 using JetBrains.Annotations;
 using UdonSharp;
@@ -7,8 +8,8 @@ using UnityEngine;
 namespace AAAS.Broadcaster.VideoSwitch {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class BroadcasterVideoSwitchSwapper : UdonSharpBehaviour {
-        public BroadcasterVideoSwitch aVideoSwitch;
-        public BroadcasterVideoSwitch bVideoSwitch;
+        public BroadcasterVideoSwitchController aVideoSwitch;
+        public BroadcasterVideoSwitchController bVideoSwitch;
 
         public bool overrideBWhenInputNotFoundInA = true;
 
@@ -19,11 +20,11 @@ namespace AAAS.Broadcaster.VideoSwitch {
                 return;
             }
 
-            var aCurrentInputIndex = aVideoSwitch.CurrentInputIndex;
-            var bCurrentInputIndex = bVideoSwitch.CurrentInputIndex;
+            var aCurrentInputIndex = aVideoSwitch.GetCurrentInputIndex();
+            var bCurrentInputIndex = bVideoSwitch.GetCurrentInputIndex();
 
-            var aVideoInputs = aVideoSwitch._GetVideoInputs();
-            var bVideoInputs = bVideoSwitch._GetVideoInputs();
+            var aVideoInputs = aVideoSwitch.GetVideoInputs();
+            var bVideoInputs = bVideoSwitch.GetVideoInputs();
 
             var bTargetIndex = FindInArray(bVideoInputs, aVideoInputs[aCurrentInputIndex]);
             var aTargetIndex = FindInArray(aVideoInputs, bVideoInputs[bCurrentInputIndex]);
@@ -34,7 +35,7 @@ namespace AAAS.Broadcaster.VideoSwitch {
                     return;
                 }
 
-                bVideoSwitch._SwitchVideoInput(bTargetIndex);
+                bVideoSwitch.SwitchVideoInput(bTargetIndex);
                 return;
             }
 
@@ -43,8 +44,8 @@ namespace AAAS.Broadcaster.VideoSwitch {
                 return;
             }
 
-            aVideoSwitch._SwitchVideoInput(aTargetIndex);
-            bVideoSwitch._SwitchVideoInput(bTargetIndex);
+            aVideoSwitch.SwitchVideoInput(aTargetIndex);
+            bVideoSwitch.SwitchVideoInput(bTargetIndex);
         }
 
         private static int FindInArray(BroadcasterVideoInputBase[] array, BroadcasterVideoInputBase value) {

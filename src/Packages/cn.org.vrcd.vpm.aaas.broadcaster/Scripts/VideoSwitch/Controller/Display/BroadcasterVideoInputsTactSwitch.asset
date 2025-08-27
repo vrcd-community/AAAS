@@ -47,19 +47,20 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: videoSwitch
+      Data: videoSwitchController
     - Name: $v
       Entry: 7
       Data: 2|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: <Name>k__BackingField
       Entry: 1
-      Data: videoSwitch
+      Data: videoSwitchController
     - Name: <UserType>k__BackingField
       Entry: 7
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: AAAS.Broadcaster.VideoSwitch.Core.BroadcasterVideoSwitch, AAAS.Broadcaster
+      Data: AAAS.Broadcaster.VideoSwitch.Controller.BroadcasterVideoSwitchController,
+        AAAS.Broadcaster
     - Name: 
       Entry: 8
       Data: 

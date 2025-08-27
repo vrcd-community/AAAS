@@ -1,4 +1,5 @@
-﻿using AAAS.Broadcaster.VideoSwitch.Input;
+﻿using AAAS.Broadcaster.VideoSwitch.Core;
+using AAAS.Broadcaster.VideoSwitch.Input;
 using JetBrains.Annotations;
 using UdonSharp;
 using UnityEngine;
@@ -9,14 +10,20 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class BroadcasterVideoInputPreviewer : UdonSharpBehaviour {
         [PublicAPI]
+        [Header("If VideoInput assigned, use VideoInput")]
         public BroadcasterVideoInputBase videoInput;
+
+        [PublicAPI]
+        public int inputIndex;
+        [PublicAPI]
+        public BroadcasterVideoSwitchController videoSwitchController;
 
         [PublicAPI]
         public RawImage previewRawImage;
 
         private void Start() {
-            if (!videoInput) {
-                Debug.LogError("[VideoInputPreviewer] No video input assigned.", this);
+            if (!videoInput && !videoSwitchController) {
+                Debug.LogError("[VideoInputPreviewer] No video input or switch controller assigned.", this);
                 enabled = false;
                 return;
             }
@@ -25,6 +32,19 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
                 Debug.LogError("[VideoInputPreviewer] No preview RawImage assigned.", this);
                 enabled = false;
                 return;
+            }
+
+            if (!videoInput) {
+                var inputs = videoSwitchController.GetVideoInputs();
+                if (inputIndex < 0 || inputIndex >= inputs.Length) {
+                    Debug.LogError(
+                        $"[VideoInputPreviewer] Input index {inputIndex} is out of range. There are {inputs.Length} inputs.",
+                        this);
+                    enabled = false;
+                    return;
+                }
+                
+                videoInput = inputs[inputIndex];
             }
 
             videoInput.RegisterVideoTextureChangedListener(this, nameof(OnVideoTextureChanged));

@@ -5,24 +5,27 @@ using UnityEngine;
 namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class BroadcasterVideoInputActiveIndicator : UdonSharpBehaviour {
-        public BroadcasterVideoSwitch videoSwitch;
+        public BroadcasterVideoSwitchController videoSwitchController;
         public int inputIndex;
 
         public GameObject activeIndicator;
 
+        private BroadcasterVideoSwitch _videoSwitch;
+
         private void Start() {
-            if (!videoSwitch) {
-                Debug.LogError("[VideoInputsTactSwitch] Video switch is not assigned. Please assign a video switch in the inspector.", this);
+            if (!videoSwitchController) {
+                Debug.LogError("[BroadcasterVideoInputActiveIndicator] Video switch controller is not assigned. Please assign a video switch in the inspector.", this);
                 return;
             }
 
-            videoSwitch._RegisterOutputTextureChangedListener(this, nameof(OnVideoInputTextureChanged));
+            _videoSwitch = videoSwitchController.GetVideoSwitch();
+            _videoSwitch._RegisterOutputTextureChangedListener(this, nameof(OnVideoInputTextureChanged));
 
             OnVideoInputTextureChanged();
         }
 
         public void OnVideoInputTextureChanged() {
-            activeIndicator.SetActive(videoSwitch.CurrentInputIndex == inputIndex);
+            activeIndicator.SetActive(_videoSwitch.CurrentInputIndex == inputIndex);
         }
     }
 }

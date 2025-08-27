@@ -11,10 +11,13 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller {
 
         private void Start() {
             if (!videoSwitch) {
-                Debug.LogError("[VideoSwitchController] No video switch assigned. Disabling controller.", this);
+                Debug.LogError("[BroadcasterVideoSwitchController] No video switch assigned. Disabling controller.", this);
                 enabled = false;
             }
         }
+        
+        [PublicAPI]
+        public int GetCurrentInputIndex() => videoSwitch.CurrentInputIndex;
 
         [PublicAPI]
         public BroadcasterVideoInputBase[] GetVideoInputs() => videoSwitch._GetVideoInputs();
@@ -23,6 +26,6 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller {
         public BroadcasterVideoSwitch GetVideoSwitch() => videoSwitch;
 
         [PublicAPI]
-        public void SwitchVideoInput(int index) => videoSwitch._SwitchVideoInput(index);
+        public bool SwitchVideoInput(int index) => videoSwitch._SwitchVideoInput(index);
     }
 }
