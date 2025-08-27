@@ -1,9 +1,9 @@
 {
-  "name": "cn.org.vrcd.vpm.aaas.broadcaster.adaptor.protv",
-  "displayName": "An Augmented Assembly System - Broadcaster - ProTV Adaptor",
+  "name": "cn.org.vrcd.vpm.aaas.live-camera",
+  "displayName": "An Augmented Assembly System - Live Camera",
   "version": "0.1.0",
   "hideInEditor": false,
-  "description": "ProTV 的 AAAS - Broadcaster 适配器",
+  "description": "多机位切换与预览",
   "unity": "2022.3",
   "author": {
     "email": "us@vrcd.org.cn",
@@ -18,8 +18,6 @@
     "vrchat"
   ],
   "vpmDependencies": {
-    "dev.architech.protv": "^3.0.0",
-    "cn.org.vrcd.vpm.aaas.broadcaster": "^0.1.0",
-    "cn.org.vrcd.vpm.pro-tv-plugins": "^0.1.0"
+    "com.vrchat.worlds": ">=3.5.0"
   }
 }

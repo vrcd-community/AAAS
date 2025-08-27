@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AAAS-ProTv
+  m_Shader: {fileID: 4800000, guid: 38d2be71b36142398c4d791645228f73, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _CROP_GAMMAZONE
+  - _RENDERMODE_NORMAL
+  - _USEFOG
+  m_InvalidKeywords: []
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: d7a2981a85581944294f8841a8cd2642, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VideoTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints:
+    - _AspectFitMode: 0
+    m_Floats:
+    - _3D: 0
+    - _Aspect: 1.77777
+    - _Brightness: 1
+    - _Clip: 0
+    - _CropGammaZone: 1
+    - _Cull: 2
+    - _FadeEdges: 1
+    - _Fog: 1
+    - _Force2D: 0
+    - _GIBrightness: 3
+    - _Mirror: 1
+    - _RenderMode: 0
+    - _UseGlobalTexture: 0
+    - _Wide: 2
+    m_Colors: []
+  m_BuildTextureStacks: []
