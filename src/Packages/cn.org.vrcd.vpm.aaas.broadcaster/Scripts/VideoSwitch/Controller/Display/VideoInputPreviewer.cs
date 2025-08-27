@@ -3,9 +3,10 @@ using JetBrains.Annotations;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
+using VRC.SDK3.UdonNetworkCalling;
 
 namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class VideoInputPreviewer : UdonSharpBehaviour {
         [PublicAPI]
         public BroadcasterVideoInputBase videoInput;
@@ -30,7 +31,25 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
             previewRawImage.texture = videoInput.GetVideoTexture();
         }
 
-        public void OnVideoTextureChanged() {
+        // "a network event which should only be called by the local player"
+        [NetworkCallable(
+            maxEventsPerSecond:
+            1)] // won't affect local "network" event call, see https://creators.vrchat.com/worlds/udon/networking/events#rate-limiting
+        public void OnVideoTextureChanged(string _) {
+            if (NetworkCalling.CallingPlayer == null) {
+                Debug.LogWarning(
+                    "[VideoInputPreviewer] Video Input Texture Changed received with no calling player, ignoring.",
+                    this);
+                return;
+            }
+
+            if (!NetworkCalling.CallingPlayer.isLocal) {
+                Debug.LogWarning(
+                    "[VideoInputPreviewer] Video Input Texture Changed received from non-local player, ignoring.",
+                    this);
+                return;
+            }
+            
             previewRawImage.texture = videoInput.GetVideoTexture();
         }
     }
