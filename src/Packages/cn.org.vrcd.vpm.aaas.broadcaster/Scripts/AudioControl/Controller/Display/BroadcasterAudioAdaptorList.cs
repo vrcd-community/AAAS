@@ -7,13 +7,13 @@ using UnityEngine.UI;
 namespace AAAS.Broadcaster.AudioControl.Controller.Display {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class BroadcasterAudioAdaptorList : UdonSharpBehaviour {
-        [SerializeField] private BroadcasterAudioControlHub controlHub;
+        [SerializeField] private BroadcasterAudioUserController controller;
 
         [SerializeField] private GameObject adaptorItemPrefab;
 
         private void Start() {
-            if (!controlHub) {
-                Debug.LogError("[BroadcasterAudioAdaptorList] Control Hub is not assigned.", this);
+            if (!controller) {
+                Debug.LogError("[BroadcasterAudioAdaptorList] Controller is not assigned.", this);
                 enabled = false;
                 return;
             }
@@ -24,7 +24,7 @@ namespace AAAS.Broadcaster.AudioControl.Controller.Display {
                 return;
             }
 
-            var adaptors = controlHub._GetAudioSourceAdaptors();
+            var adaptors = controller.GetControlHub()._GetAudioSourceAdaptors();
             for (var index = 0; index < adaptors.Length; index++) {
                 var adaptor = adaptors[index];
 

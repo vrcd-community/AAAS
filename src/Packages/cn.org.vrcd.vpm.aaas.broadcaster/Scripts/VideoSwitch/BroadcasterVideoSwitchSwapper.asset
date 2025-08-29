@@ -59,7 +59,8 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: AAAS.Broadcaster.VideoSwitch.Core.BroadcasterVideoSwitch, AAAS.Broadcaster
+      Data: AAAS.Broadcaster.VideoSwitch.Controller.BroadcasterVideoSwitchController,
+        AAAS.Broadcaster
     - Name: 
       Entry: 8
       Data: 

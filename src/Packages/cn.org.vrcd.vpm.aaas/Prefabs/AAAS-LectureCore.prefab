@@ -897,7 +897,7 @@ MonoBehaviour:
   bakeGlobalVideoTexture: 0
   startDisabled: 0
   stopMediaWhenDisabled: 0
-  enableLocalPause: 1
+  enableLocalPause: 0
   versionNumber: 3.0.0-beta.28
   gsvfixcheck: 0
   updateIntervalFrames: 1

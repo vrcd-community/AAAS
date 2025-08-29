@@ -1,15 +1,19 @@
-﻿using AAAS.LiveCamera.Positions;
+﻿using AAAS.LiveCamera.CameraFilters;
+using AAAS.LiveCamera.Positions;
 using UdonSharp;
 using UnityEngine;
 
 namespace AAAS.LiveCamera.CameraManagers {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class PreviewerCameraManager : UdonSharpBehaviour {
-        public Camera previewerCamera;
+        public Camera referenceCamera;
+        private Camera _previewerCamera;
 
         public CameraPositionsManager cameraPositionsManager;
 
         public RenderTexture[] previewerTextures;
+        
+        public CameraFilterBase[] cameraFilters;
         
         public float updateInterval = 0.1f;
         
@@ -17,8 +21,8 @@ namespace AAAS.LiveCamera.CameraManagers {
         private float _lastUpdateTime;
 
         private void Start() {
-            if (!previewerCamera) {
-                Debug.LogError("[PreviewerCameraManager] Previewer Camera is not assigned.");
+            if (!referenceCamera) {
+                Debug.LogError("[PreviewerCameraManager] Reference Camera is not assigned.");
                 enabled = false;
                 return;
             }
@@ -40,6 +44,16 @@ namespace AAAS.LiveCamera.CameraManagers {
                 enabled = false;
                 return;
             }
+            
+            referenceCamera.gameObject.SetActive(false);
+            referenceCamera.enabled = false;
+            
+            _previewerCamera = Instantiate(referenceCamera.gameObject).GetComponent<Camera>();
+            
+            _previewerCamera.enabled = true;
+            _previewerCamera.gameObject.SetActive(true);
+
+            _previewerCamera.CopyFrom(referenceCamera);
         }
 
         private void LateUpdate() {
@@ -56,12 +70,22 @@ namespace AAAS.LiveCamera.CameraManagers {
             _lastUpdatedCameraPositionIndex = updateCameraPositionIndex;
 
             var cameraPosition = cameraPositionsManager.cameraPositions[updateCameraPositionIndex];
-            var cameraPositionTransform = cameraPosition._GetCameraTransform();
+            UpdateCamera(cameraPosition);
             
-            previewerCamera.transform.position = cameraPositionTransform.position;
-            previewerCamera.transform.rotation = cameraPositionTransform.rotation;
+            _previewerCamera.targetTexture = previewerTextures[updateCameraPositionIndex];
+        }
+        
+        private void UpdateCamera(CameraPositionBase position) {
+            _previewerCamera.CopyFrom(referenceCamera);
+
+            var positionTransform = position._GetCameraTransform();
             
-            previewerCamera.targetTexture = previewerTextures[updateCameraPositionIndex];
+            _previewerCamera.transform.SetPositionAndRotation(positionTransform.position, positionTransform.rotation);
+            
+            foreach (var filter in cameraFilters) {
+                if (filter._ApplyFilter(_previewerCamera, position))
+                    break;
+            }
         }
     }
 }
