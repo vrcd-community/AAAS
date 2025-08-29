@@ -1,4 +1,6 @@
-﻿using AAAS.LiveCamera.Positions;
+﻿using System;
+using AAAS.LiveCamera.CameraFilters;
+using AAAS.LiveCamera.Positions;
 using JetBrains.Annotations;
 using UdonSharp;
 using UnityEngine;
@@ -8,9 +10,13 @@ using VRC.SDKBase;
 namespace AAAS.LiveCamera.CameraManagers {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public sealed class LiveCameraManager : UdonSharpBehaviour {
-        public Camera liveCamera;
+        public Camera referenceCamera;
+        
+        private Camera _liveCamera;
 
         public CameraPositionsManager cameraPositionsManager;
+        
+        public CameraFilterBase[] cameraFilters;
 
         [UdonSynced]
         [FieldChangeCallback(nameof(CurrentCameraPositionIndex))]
@@ -30,8 +36,8 @@ namespace AAAS.LiveCamera.CameraManagers {
         }
 
         private void Start() {
-            if (!liveCamera) {
-                Debug.LogError("[LiveCameraManager] LiveCamera not found", this);
+            if (!referenceCamera) {
+                Debug.LogError("[LiveCameraManager] ReferenceCamera not found", this);
                 enabled = false;
                 return;
             }
@@ -48,7 +54,16 @@ namespace AAAS.LiveCamera.CameraManagers {
                 return;
             }
 
-            ChangeCameraPositionInternal(0);
+            referenceCamera.gameObject.SetActive(false);
+            referenceCamera.enabled = false;
+            
+            _liveCamera = Instantiate(referenceCamera.gameObject).GetComponent<Camera>();
+            
+            _liveCamera.enabled = true;
+            _liveCamera.gameObject.SetActive(true);
+
+            UpdateCamera();
+            _liveCamera.CopyFrom(referenceCamera);
 
             for (var index = 0; index < cameraPositionsManager.cameraPositions.Length; index++) {
                 var cameraPosition = cameraPositionsManager.cameraPositions[index];
@@ -83,19 +98,30 @@ namespace AAAS.LiveCamera.CameraManagers {
                 return false;
             }
 
-            var positionTransform = position._GetCameraTransform();
-
             TakeOwnership();
             _currentCameraPositionIndex = index;
             RequestSerialization();
-            
-            liveCamera.transform.SetPositionAndRotation(positionTransform.position, positionTransform.rotation);
+
+            UpdateCamera();
             return true;
         }
 
-        private void ChangeCameraPositionInternal(int index) {
-            var positionTransform = cameraPositionsManager.cameraPositions[index]._GetCameraTransform();
-            liveCamera.transform.SetPositionAndRotation(positionTransform.position, positionTransform.rotation);
+        private void Update() {
+            UpdateCamera();
+        }
+
+        private void UpdateCamera() {
+            _liveCamera.CopyFrom(referenceCamera);
+
+            var position = cameraPositionsManager.cameraPositions[CurrentCameraPositionIndex];
+            var positionTransform = position._GetCameraTransform();
+            
+            _liveCamera.transform.SetPositionAndRotation(positionTransform.position, positionTransform.rotation);
+            
+            foreach (var filter in cameraFilters) {
+                if (filter._ApplyFilter(_liveCamera, position))
+                    break;
+            }
         }
 
         // "a network event which should only be called by the local player"
@@ -133,7 +159,7 @@ namespace AAAS.LiveCamera.CameraManagers {
             }
 
             if (CurrentCameraPositionIndex == inputIndex)
-                ChangeCameraPositionInternal(CurrentCameraPositionIndex);
+                UpdateCamera();
         }
         
         private void TakeOwnership() {
