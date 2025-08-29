@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4555517485311446548}
   - component: {fileID: 5087291916235085290}
   m_Layer: 0
-  m_Name: PreviewerCamera
+  m_Name: ReferencePreviewerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4555517485311446548
 Transform:
   m_ObjectHideFlags: 0
@@ -138,9 +138,11 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 3689209160084650023}
-  previewerCamera: {fileID: 5087291916235085290}
+  referenceCamera: {fileID: 5087291916235085290}
   cameraPositionsManager: {fileID: 5220528360474992597}
   previewerTextures: []
+  cameraFilters:
+  - {fileID: 7652537021674878508}
   updateInterval: 0.1
 --- !u!114 &3689209160084650023
 MonoBehaviour:
