@@ -22,6 +22,11 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
                 return;
             }
 
+            // Load after broadcaster video switch controller is initialized
+            SendCustomEventDelayedFrames(nameof(_UpdateDisplay), 1);
+        }
+
+        public void _UpdateDisplay() {
             var videoInputs = videoSwitchController.GetVideoInputs();
             for (var index = 0; index < videoInputs.Length; index++) {
                 var itemGameObject = Instantiate(inputItemTemplatePrefab, transform);
