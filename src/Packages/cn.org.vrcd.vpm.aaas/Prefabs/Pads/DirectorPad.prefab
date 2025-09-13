@@ -2625,7 +2625,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1270.5, y: 786, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2419162175696325753
 GameObject:
@@ -9919,11 +9919,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1629629255233726226}
   m_FillRect: {fileID: 0}
   m_HandleRect: {fileID: 5001352956883050155}
-  m_Direction: 0
-  m_MinValue: 10
-  m_MaxValue: 200
+  m_Direction: 1
+  m_MinValue: 0.1
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
