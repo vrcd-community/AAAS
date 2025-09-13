@@ -63,7 +63,8 @@ namespace AAAS.LiveCamera.CameraFilters {
             
             var distanceToHead = Vector3.Distance(liveCamera.transform.position, headTrackingData.position);
             
-            var fov = 2 * Mathf.Atan2(_headWidth, distanceToHead * 2);
+            // Headwidth: 1 ~ 30
+            var fov = 5 * 2 * Mathf.Atan2(_headWidth, distanceToHead * 2);
 
             liveCamera.fieldOfView = fov;
             liveCamera.transform.LookAt(headTrackingData.position);
