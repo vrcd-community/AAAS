@@ -15,10 +15,9 @@ namespace AAAS.LiveCamera.CameraManagers {
         
         public CameraFilterBase[] cameraFilters;
         
-        public float updateInterval = 0.1f;
+        public bool enablePreviewUpdate;
         
         private int _lastUpdatedCameraPositionIndex = -1;
-        private float _lastUpdateTime;
 
         private void Start() {
             if (!referenceCamera) {
@@ -57,7 +56,7 @@ namespace AAAS.LiveCamera.CameraManagers {
         }
 
         private void LateUpdate() {
-            if (Time.time - _lastUpdateTime < updateInterval)
+            if (!enablePreviewUpdate)
                 return;
             
             var cameraPositions = cameraPositionsManager.cameraPositions;

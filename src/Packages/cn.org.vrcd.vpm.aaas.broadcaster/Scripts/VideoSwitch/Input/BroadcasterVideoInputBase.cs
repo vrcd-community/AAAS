@@ -14,6 +14,8 @@ namespace AAAS.Broadcaster.VideoSwitch.Input
         protected string[] _eventNames = new string[0];
         [PublicAPI]
         protected string[] _nonce = new string[0];
+        [PublicAPI]
+        protected bool[] _isNetworkEvent = new bool[0];
 
         [PublicAPI]
         public virtual Texture GetVideoTexture()
@@ -22,7 +24,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Input
         }
 
         [PublicAPI]
-        public virtual bool RegisterVideoTextureChangedListener(UdonSharpBehaviour listeners, string eventName, string nonce = "")
+        public virtual bool RegisterVideoTextureChangedListener(UdonSharpBehaviour listeners, string eventName, string nonce)
         {
             if (!listeners) {
                 Debug.LogWarning("[BroadcasterVideoInputBase] RegisterVideoTextureChangedReceiver called with null receiver.", this);
@@ -37,6 +39,27 @@ namespace AAAS.Broadcaster.VideoSwitch.Input
             _listeners = ArrayTools.Add(_listeners, listeners);
             _eventNames = ArrayTools.Add(_eventNames, eventName);
             _nonce = ArrayTools.Add(_nonce, nonce);
+            _isNetworkEvent = ArrayTools.Add(_isNetworkEvent, true);
+            return true;
+        }
+        
+        [PublicAPI]
+        public virtual bool RegisterVideoTextureChangedListener(UdonSharpBehaviour listeners, string eventName)
+        {
+            if (!listeners) {
+                Debug.LogWarning("[BroadcasterVideoInputBase] RegisterVideoTextureChangedReceiver called with null receiver.", this);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(eventName)) {
+                Debug.LogWarning("[BroadcasterVideoInputBase] RegisterVideoTextureChangedReceiver called with empty event name.", this);
+                return false;
+            }
+
+            _listeners = ArrayTools.Add(_listeners, listeners);
+            _eventNames = ArrayTools.Add(_eventNames, eventName);
+            _nonce = ArrayTools.Add(_nonce, "");
+            _isNetworkEvent = ArrayTools.Add(_isNetworkEvent, false);
             return true;
         }
 
@@ -50,6 +73,11 @@ namespace AAAS.Broadcaster.VideoSwitch.Input
                 if (listener && string.IsNullOrEmpty(eventName))
                     continue;
 
+                if (!_isNetworkEvent[index]) {
+                    _listeners[index].SendCustomEvent(eventName);
+                    return;
+                }
+                
                 _listeners[index].SendCustomNetworkEvent(NetworkEventTarget.Self, eventName, nonce);
             }
         }
