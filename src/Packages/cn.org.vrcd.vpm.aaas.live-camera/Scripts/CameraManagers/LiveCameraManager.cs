@@ -18,6 +18,8 @@ namespace AAAS.LiveCamera.CameraManagers {
         
         public CameraFilterBase[] cameraFilters;
 
+        public bool enableCamera;
+
         [UdonSynced]
         [FieldChangeCallback(nameof(CurrentCameraPositionIndex))]
         private int _currentCameraPositionIndex;
@@ -111,6 +113,12 @@ namespace AAAS.LiveCamera.CameraManagers {
         }
 
         private void UpdateCamera() {
+            if (!enableCamera) {
+                _liveCamera.enabled = false;
+                return;
+            }
+
+            _liveCamera.enabled = true;
             _liveCamera.CopyFrom(referenceCamera);
 
             var position = cameraPositionsManager.cameraPositions[CurrentCameraPositionIndex];

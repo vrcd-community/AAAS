@@ -56,8 +56,12 @@ namespace AAAS.LiveCamera.CameraManagers {
         }
 
         private void LateUpdate() {
-            if (!enablePreviewUpdate)
+            if (!enablePreviewUpdate) {
+                _previewerCamera.enabled = false;
                 return;
+            }
+
+            _previewerCamera.enabled = true;
             
             var cameraPositions = cameraPositionsManager.cameraPositions;
             
