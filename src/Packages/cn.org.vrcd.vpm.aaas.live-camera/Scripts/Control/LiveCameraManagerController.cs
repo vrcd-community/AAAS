@@ -1,5 +1,6 @@
 ﻿using System;
 using AAAS.LiveCamera.CameraManagers;
+using JetBrains.Annotations;
 using UdonSharp;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace AAAS.LiveCamera.Control {
             }
         }
         
+        [PublicAPI]
         public void ChangeCameraPosition(int index) {
             if (!liveCameraManager) {
                 Debug.LogError("[LiveCameraManagerController] LiveCameraManager is null", this);
@@ -21,6 +23,26 @@ namespace AAAS.LiveCamera.Control {
             }
 
             liveCameraManager.ChangeCameraPosition(index);
+        }
+        
+        [PublicAPI]
+        public void SetCameraEnabled(bool isEnabled) {
+            if (!liveCameraManager) {
+                Debug.LogError("[LiveCameraManagerController] LiveCameraManager is null", this);
+                return;
+            }
+
+            liveCameraManager.enableCamera = isEnabled;
+        }
+        
+        [PublicAPI]
+        public void ToggleCameraEnabled() {
+            if (!liveCameraManager) {
+                Debug.LogError("[LiveCameraManagerController] LiveCameraManager is null", this);
+                return;
+            }
+
+            liveCameraManager.enableCamera = !liveCameraManager.enableCamera;
         }
     }
 }
