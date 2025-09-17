@@ -20,7 +20,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Bridge {
             _outputTexture = bridgeParentOutput.GetOutputTexture();
         }
 
-        internal void UpdateOutputTexture(Texture texture) {
+        public void UpdateOutputTexture(Texture texture) {
             _outputTexture = texture;
             NotifyVideoTextureChanged();
         }
