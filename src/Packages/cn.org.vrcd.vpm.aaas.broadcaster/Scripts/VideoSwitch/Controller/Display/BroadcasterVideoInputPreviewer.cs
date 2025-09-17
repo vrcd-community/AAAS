@@ -50,15 +50,11 @@ namespace AAAS.Broadcaster.VideoSwitch.Controller.Display {
                 videoInput = inputs[inputIndex];
             }
 
-            Debug.Log("[VideoInputPreviewer] Registering video texture changed listener.", this);
             videoInput.RegisterVideoTextureChangedListener(this, nameof(_OnVideoTextureChanged));
             previewRawImage.texture = videoInput.GetVideoTexture();
         }
 
         public void _OnVideoTextureChanged() {
-            var texture = videoInput.GetVideoTexture();
-            Debug.Log("[VideoInputPreviewer] Video texture changed, updating preview.", this);
-            Debug.Log("[VideoInputPreviewer] Texture", texture);
             previewRawImage.texture = videoInput.GetVideoTexture();
         }
     }
