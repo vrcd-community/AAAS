@@ -69,13 +69,14 @@ namespace AAAS.Broadcaster.VideoSwitch.Input
                 var listener = _listeners[index];
                 var eventName = _eventNames[index];
                 var nonce = _nonce[index];
+                var isNetworkEvent = _isNetworkEvent[index];
 
                 if (listener && string.IsNullOrEmpty(eventName))
                     continue;
 
-                if (!_isNetworkEvent[index]) {
+                if (!isNetworkEvent) {
                     _listeners[index].SendCustomEvent(eventName);
-                    return;
+                    continue;
                 }
                 
                 _listeners[index].SendCustomNetworkEvent(NetworkEventTarget.Self, eventName, nonce);

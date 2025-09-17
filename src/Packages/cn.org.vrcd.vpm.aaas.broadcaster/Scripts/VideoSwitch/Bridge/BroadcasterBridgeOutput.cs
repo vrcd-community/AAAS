@@ -19,7 +19,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Bridge {
             }
         }
 
-        internal void RegisterInput(BroadcasterBridgeInput input) {
+        public void RegisterInput(BroadcasterBridgeInput input) {
             if (!input) {
                 Debug.LogError("[BroadcasterBridgeOutput] Attempted to register a null input.");
                 return;
@@ -33,7 +33,7 @@ namespace AAAS.Broadcaster.VideoSwitch.Bridge {
         }
 
         [CanBeNull]
-        internal Texture GetOutputTexture() {
+        public Texture GetOutputTexture() {
             return broadcasterSwitch._GetOutputTexture();
         }
     }
